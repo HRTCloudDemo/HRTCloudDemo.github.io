@@ -58,7 +58,7 @@ Run `cf push` to push this to IBM Cloud. Only proceed to the next step if your a
 
 ## Test
 
-Go to [https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net](https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net)
+Go to https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net
 
 ## References
 
