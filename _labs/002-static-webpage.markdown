@@ -3,6 +3,14 @@ layout: lab
 title: Run a static webpage on IBM Cloud
 ---
 
+## Setup
+
+As this workshop is in english, you should change your browser language to english:
+- Instructions for [Firefox](!http://mzl.la/1KC5WH3)
+- Instructions for [Chrome](https://support.google.com/chromebook/answer/173424?hl=en)
+- Instructions for [Edge](http://www.tech-recipes.com/rx/64556/how-to-change-microsoft-edge-language/)
+- Instructions for [Safari](https://pchelp.ricmedia.com/change-apple-safari-language-settings-mac/)
+
 ## Create a simple HTML file
 
 1.  Create a new directory that will hold the files for the new web site

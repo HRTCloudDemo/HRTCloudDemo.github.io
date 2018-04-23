@@ -22,7 +22,7 @@
 
 - Select the **Simple Cloudfoundry Toolchain** and provide a name in the right (_IBM Cloud_-)organization.
 
-  ![simple_cf](simple_cf_tc.png?raw=true))
+  ![simple_cf](simple_cf_tc.png?raw=true)
   ![tc_name](tc_name.png?raw=true)
 
 - You now need to connect your git repository to that toolchain, so that once you push your code on the command line of your local workstation.
