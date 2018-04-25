@@ -37,13 +37,11 @@ The purpose of this exercise is to enable you to configure and use existing clou
 
   Wou will get redirected to another page. At this point of time the service is ready to use
 
-- Retrieve the credentials for your service instance
+- The credentials to access your service are displayed in the `Credentials`section on    that page. Please press "show" to reveal username and pasword
 
-    1. Click Service credentials.
-    1. Click View credentials under Actions.
-    1. Copy the username, password and values.
+  ![credentials](lab4_show_creds.png?raw=true)
 
-- Note the values to be used in the next section
+- Note down url username and password. They will be used in the next section of this     tutorial
 
 ## Get the code of the sample app
 
@@ -73,8 +71,8 @@ The app provides a basic user interface and an API that you will use in an later
 - Install dependent packages via: `npm i`
 - Start the app via: `node app.js`
 - You can open the app by visiting [http://localhost:3000](http://localhost:3000) in your browser
-- Press the submit button on the loaded page. Enter the word "happy" in the mood field
-- You can play around by changing the content of the input fields
+- Press the submit button on the loaded page. The word "happy" should be displayed in the "mood" field
+- You can play around by changing the content of both input fields.
 
 Disclaimer: The scoring algorithm that condenses of the complex response of the Tone Analyzer service to one single word is quite simple and might return surprising results. Feel free to improve.
 
