@@ -11,7 +11,7 @@ to indicate the mood of a chat partner.
 The Tone Analyzer App that you deployed in the "Consuming Services" exercise will take the role of a
 micro service providing an API.
 
-It provides an API via the route 
+It provides an API via the route
 
 ```https://<your tone app>/tone```
 
@@ -46,3 +46,4 @@ You should use this value to indicate the mood in your chat application.
 * [Watson Tone Analyzer Home Page](https://www.ibm.com/watson/services/tone-analyzer/)
 * [Watson Tone Analyzer Documentation](https://console.bluemix.net/docs/services/tone-analyzer/index.html#about)
 * [Request package to call APIs from Javascript](https://github.com/request/request)
+* [Solution Tutorials](https://console.bluemix.net/docs/tutorials/index.html#tutorials)
