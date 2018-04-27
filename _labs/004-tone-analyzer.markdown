@@ -63,7 +63,7 @@ The app provides a basic user interface and an API that you will use in an later
   ```
 
 - Copy the file `.env.sample` and save it under the new name `.env`
-  (on Windows you should use the `rename` command to change the name of the file)
+  (on Windows you can use the `rename` command to change the name of the file to `.env`)
 
 - Edit the new file `.env` and fill in username, password and url of your instance of the Tone Analyzer service
 
@@ -83,13 +83,13 @@ Disclaimer: The scoring algorithm that condenses of the complex response of the 
 
 In the root directory of the app create a file named `manifest.yml` with the following content:
 
-  <pre>
-      ---
-      applications:
-      - name: <span class="app_name"><span class="app_name">random-app-name</span></span>
-        memory: 128M
-        host: <span class="app_name"><span class="app_name">random-app-name</span></span>
-  </pre>
+<pre>
+---
+applications:
+- name: <span class="app_name"><span class="app_name">random-app-name</span></span>
+  memory: 128M
+  host: <span class="app_name"><span class="app_name">random-app-name</span></span>
+</pre>
 
 - Set the API endpoint to your region
 
