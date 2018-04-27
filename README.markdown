@@ -4,6 +4,8 @@ This is the web site for Hochschule Reutlingen Cloud Demos.
 
 Add your Markdown or HTML files to `_labs` and `git push`. GitHub Pages will update the page a couple of minutes later.
 
+Images should be resized to be 800px wide. On MacOS, you can use something like `sips --resampleHeightWidthMax 800 _labs/toolchain-*.png`.
+
 # Local Test
 
 * Install [jekyll](http://jekyllrb.com/):
