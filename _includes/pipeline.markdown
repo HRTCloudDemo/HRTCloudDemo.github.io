@@ -1,4 +1,4 @@
-- Go to the _IBM Cloud_ main menu and click on **DevOps**, then click on **Continous Delivery**.
+- Go to the _IBM Cloud_ main menu and click on **DevOps**, then click on **Develop and test a Cloud Foundry app**.
 
   ![create_cd](cd_create.png)
 
