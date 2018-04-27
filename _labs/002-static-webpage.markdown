@@ -24,7 +24,17 @@ title: Run a static webpage on IBM Cloud
 
 ## Deploy
 
-1.  Logon to the IBM Cloud using `cf`:
+1.  [Log on to the IBM Cloud](https://console.bluemix.net) and select your Cloud Foundry organization:
+
+    ![](cf-orgs.png)
+
+1.  Create a `cf` space in the IBM Cloud UI and select the region **Germany**:
+
+    ![](cf-create-space-de.png)
+
+    This step will ensure that your space is available in the region `eu-de`.
+
+1.  In your local terminal, log on to the IBM Cloud using `cf`:
 
     <pre>
     cf login -a https://api.eu-de.bluemix.net
