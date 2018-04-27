@@ -17,8 +17,6 @@ One member of the team will act as the author and change the content of the appl
 
 # Create a CI/CD pipeline
 
-{% include pipeline.markdown %}
-
   Create a `manifest.yml` with the following content:
 
   <pre>
@@ -32,6 +30,8 @@ One member of the team will act as the author and change the content of the appl
   on your local machine. Then manually run `cf push` and verify your app is picking up the right name. _IBM Cloud_ is adding your host to the `eu-de.mybluemix.net` domain  by default so your FQDN is <code><span class="app_name">random-app-name</span>.eu-de.mybluemix.net</code>. Once you can access your hostname, commit and push your changes to git and wait for the pipeline to finish.
 
 {% include random_app_name.html %}
+
+{% include pipeline.markdown %}
 
 # Iterate over the application
 
