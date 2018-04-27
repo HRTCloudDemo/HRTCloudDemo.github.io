@@ -1,4 +1,4 @@
-- Go to the _IBM Cloud_ main menu and click on **DevOps**, then click on **Develop and test a Cloud Foundry app**.
+- Go to the _IBM Cloud_ main menu and click on **DevOps**, then click on **Continuous Delivery**.
 
   ![create_cd](cd_create.png)
 
@@ -20,9 +20,10 @@
 
   ![create_tc](create_toolchain.png?raw?true)
 
-- Select the **Simple Cloudfoundry Toolchain** and provide a name in the right (_IBM Cloud_-)organization.
+- Select the **Develop and test a Cloud Foundry app** and provide a name in the right (_IBM Cloud_-)organization.
 
   ![simple_cf](simple_cf_tc.png?raw=true))
+
   ![tc_name](tc_name.png?raw=true)
 
 - You now need to connect your git repository to that toolchain, so that once you push your code on the command line of your local workstation.
