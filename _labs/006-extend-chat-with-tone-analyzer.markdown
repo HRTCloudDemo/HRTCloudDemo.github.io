@@ -16,9 +16,9 @@ It provides an API via the route
 ```https://<your tone app>/tone```
 
 which can be accessed via a POST request
-(Content-Type: application/JSON)
+(Content-Type: application/JSON).
 
-The request format does look like this:
+The body of the POST request should look like this:
 
 ```
 {
@@ -39,11 +39,11 @@ The service will return a response JSON that does look like this:
 
 The service will return either "happy" or "unhappy" in the mood property.
 
-You should use this value to indicate the mood in your chat application.
+You should use this value to indicate the mood in your chat application. 
 
 ## References
 * [Source code of the Tone Analyzer application](https://github.com/HRTCloudDemo/HRTToneDemo)
 * [Watson Tone Analyzer Home Page](https://www.ibm.com/watson/services/tone-analyzer/)
 * [Watson Tone Analyzer Documentation](https://console.bluemix.net/docs/services/tone-analyzer/index.html#about)
-* [Request package to call APIs from Javascript](https://github.com/request/request)
-* [Solution Tutorials](https://console.bluemix.net/docs/tutorials/index.html#tutorials)
+* [Request package to call REST APIs from NodeJs](https://github.com/request/request)
+
