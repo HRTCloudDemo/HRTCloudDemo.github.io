@@ -15,6 +15,13 @@ One member of the team will act as the author and change the content of the appl
 1. Add all files to the repo and push it
 1. Add your team mate as a collaborator
 
+# Invite you parter into your IBM Cloud organisation
+
+To enable your partner to work in your organization you should invite him into it.
+This process is described [here](https://console.bluemix.net/docs/iam/iamuserinv.html#iamuserinv).
+Please perform the steps described in the `Inviting users` and the 
+steps under `Cloud Foundry access` in the `Assigning user access` section. You should give your Partner `Developer` rights in the `dev` space in the Germany (Frankfurt) region.
+
 # Create a CI/CD pipeline
 
 1.  Create a `manifest.yml` with the following content:
