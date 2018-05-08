@@ -71,7 +71,7 @@ The app provides a basic user interface and an API that you will use in an later
 
 - Install dependent packages via: `npm i`
 - Start the app via: `node app.js`
-- You can open the app by visiting [http://localhost:3000](http://localhost:3000) in your browser
+- You can open the app by visiting [http://localhost:3000](http://localhost:3000) in your browser. If you are using the Vagrant image, the port will be forwarded to your workstation as [http://localhost:12345](http://localhost:12345) instead.
 - Press the submit button on the loaded page. The word "happy" should be displayed in the "mood" field
 - You can play around by changing the content of both input fields.
 
