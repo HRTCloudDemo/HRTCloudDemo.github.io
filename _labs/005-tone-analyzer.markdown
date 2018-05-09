@@ -54,19 +54,22 @@ The app provides a basic user interface and an API that you will use in an later
 - Clone your fork of the repository to your local disk
 
   ```bash
-  git clone <url from the last step> and change into the created folder
+  git clone <url from the last step>
   ```
 
-- Copy the file `.env.sample` and save it under the new name `.env`
-  (on Windows you can use the `rename` command to change the name of the file to `.env`)
+  and change into the created folder
 
-- Edit the new file `.env` and fill in username, password and url of your instance of the Tone Analyzer service
+- Rename `.env.sample` to `.env`
+
+  On Windows you cannot do this in the Explorer. Instead, you can use the `rename` command in a Command Window change the name of the file).
+
+- Edit the `.env` and fill in username, password and url of your instance of the Tone Analyzer service
 
 # Test the app locally
 
 - Install dependent packages via: `npm i`
 - Start the app via: `node app.js`
-- You can open the app by visiting [http://localhost:3000](http://localhost:3000) in your browser. If you are using the Vagrant image, the port will be forwarded to your workstation as [http://localhost:12345](http://localhost:12345) instead.
+- Open the app by visiting [http://localhost:3000](http://localhost:3000) in your browser. If you are using the Vagrant image, the port will be forwarded to your workstation as [http://localhost:12345](http://localhost:12345) instead.
 - Press the submit button on the loaded page. The word "happy" should be displayed in the "mood" field
 - You can play around by changing the content of both input fields.
 
