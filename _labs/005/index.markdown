@@ -5,10 +5,9 @@ title: Extend your Chat Application with Mood Indication - Simple Microservice
 
 ## Purpose
 
-Content of this exercise is to enhance your chat app to indicate the mood of a chat partner.
+The goal of this exercise is to enhance your chat app so that it indicates the mood of a chat partner.
 
-The Tone Analyzer App that you deployed in the [Consume a Cloud Service]() exercise will take the role of a
-micro service providing an API. It provides an API via the route `https://<your tone app>/tone`, which can be accessed via a POST request (`Content-Type: application/json`).
+The tone analyzer app that you deployed in the ["Consume a Cloud Service"]({% link _labs/003/index.markdown %}) exercise will now take the role of a micro service. It provides an API via the route `/tone`, which can be accessed via a POST request with `Content-Type: application/json`.
 
 The body of the POST request should look like this:
 
@@ -28,7 +27,7 @@ The service will return a response JSON that does look like this:
 }
 ```
 
-The service will return either "happy" or "unhappy" in the mood property. You should use this value to indicate the mood in your chat application.
+The `mood` property will either be "`happy`" or "`unhappy`". You can use this value to indicate the chat partner's mood in your application.
 
 ## References
 * [Source code of the Tone Analyzer application](https://github.com/HRTCloudDemo/HRTToneDemo)
