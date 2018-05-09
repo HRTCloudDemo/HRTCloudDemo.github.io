@@ -40,71 +40,71 @@ One member of the team will act as the author and change the content of the appl
 
 1.  Create a new toolchain:
 
-    ![](002/create.png)
+    ![](create.png)
 
 1.  Select "Build your own toolchain":
 
-    ![](002/byo.png)
+    ![](byo.png)
 
 1.  Provide a name for the new toolchain:
 
-    ![](002/byo-config.png)
+    ![](byo-config.png)
 
 1.  Now we need to add a tool to fetch the source code of the app. Add a new tool to this toolchain:
 
-    ![](002/add-tool.png)
+    ![](add-tool.png)
 
 1.  Select the GitHub tool:
 
-    ![](002/github.png)
+    ![](github.png)
 
 1.  Select "Existing repository" and provide the URL to your app's source code:
 
-    ![](002/git-configure.png)
+    ![](git-configure.png)
 
 1.  Now we need another tool to publish the source code:
 
-    ![](002/add-tool.png)
+    ![](add-tool.png)
 
 1.  Select "Delivery pipeline":
 
-    ![](002/delivery-pipeline.png)
+    ![](delivery-pipeline.png)
 
 1.  Provide a name for the new pipeline:
 
-    ![](002/delivery-pipeline-name.png)
+    ![](delivery-pipeline-name.png)
 
 1.  Configure the delivery pipeline by clicking it:
 
-    ![](002/configure-pipeline.png)
+    ![](configure-pipeline.png)
 
 1.  Add a stage to it:
 
-    ![](002/add-stage.png)
+    ![](add-stage.png)
 
 1.  Select the previously configured GitHub source as input of this step:
 
-    ![](002/stage-input.png)
+    ![](stage-input.png)
 
 1.  In the "Jobs" tab if this stage, add a new job:
 
-    ![](002/stage-add-job.png)
+    ![](stage-add-job.png)
 
 1.  We want to deploy our source code, so please select "Deploy":
 
-    ![](002/stage-deploy.png)
+    ![](stage-deploy.png)
 
 1.  Make sure you select your organization and the desired stage (e.g. "dev"):
 
-    ![](002/org-space.png)
+    ![](org-space.png)
 
 1.  Once saved, the stage will run whenever a new commit has arrived at the GitHub repository. As a one-off, you can be start a deploy manually:
 
-    ![](002/stage-trigger.png)
+    ![](stage-trigger.png)
 
 1.  Once the deploy finished successfully, you can find the URL where the app is deployed to in the logs of the stage. It should be the same as the one you specified in `manifest.yml`:
 
-    ![](002/logs.png)
+    ![](logs.png)
 
 {% include random_app_name.html %}
 
