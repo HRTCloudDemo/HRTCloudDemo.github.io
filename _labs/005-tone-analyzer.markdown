@@ -61,7 +61,8 @@ The app provides a basic user interface and an API that you will use in an later
 
 - Rename `.env.sample` to `.env`
 
-  On Windows you cannot do this in the Explorer. Instead, you can use the `rename` command in a Command Window change the name of the file).
+  On Windows you cannot do this in the Explorer. 
+  Instead, you can use the `rename` command in a Command Window change the name of the file.
 
 - Edit the `.env` and fill in username, password and url of your instance of the Tone Analyzer service
 
@@ -73,7 +74,7 @@ The app provides a basic user interface and an API that you will use in an later
 - Press the submit button on the loaded page. The word "happy" should be displayed in the "mood" field
 - You can play around by changing the content of both input fields.
 
-Disclaimer: The scoring algorithm that condenses of the complex response of the Tone Analyzer service to one single word is quite simple and might return surprising results. Feel free to improve.
+Disclaimer: The scoring algorithm that condenses the complex response of the Tone Analyzer service to one single word is quite simple and might return surprising results. Feel free to improve.
 
 ![Tone app](005/toneapp.png)
 
