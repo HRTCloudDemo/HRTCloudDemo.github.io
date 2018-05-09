@@ -114,7 +114,7 @@ applications:
   cf push
   ```
 
-- Access the app in your browser as https://<span class="app_name">random-app-name</span>.eu-de.bluemix.net
+- Access the app in your browser as <a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a>
 
 - Submitting with all defaults should again return "happy" in the mood field
 

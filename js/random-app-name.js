@@ -26,11 +26,23 @@ function replaceRandomAppName() {
     Cookies.set(RANDOM_APP_NAME, app_name,{ path: '' });
   }
 
-  var spans = document.getElementsByClassName(CSS_CLASS_APP_NAME);
+  var elements = document.getElementsByClassName(CSS_CLASS_APP_NAME);
 
-  while (spans.length > 0) {
-    var span = spans[0];
-    span.parentNode.replaceChild(document.createTextNode(app_name), span);
-    spans = document.getElementsByClassName(CSS_CLASS_APP_NAME);
+  while (elements.length > 0) {
+    var element = elements[0];
+
+    switch (element.nodeName) {
+      case 'A':
+        element.href = "https://" + app_name + ".eu-de.mybluemix.net"
+        element.classList.remove('app_name')
+        break;
+      case 'SPAN':
+        element.parentNode.replaceChild(document.createTextNode(app_name), element);
+        break;
+      default:
+        throw new Error("Don't know how to handle element " + element.outerHTML);
+    }
+
+    elements = document.getElementsByClassName(CSS_CLASS_APP_NAME);
   }
 }

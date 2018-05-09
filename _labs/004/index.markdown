@@ -44,7 +44,7 @@ Repeat the steps from [lab 3]({% link _labs/003/index.markdown %}) and create an
 
 ## Test
 
-Go to https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net
+Go to <a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a>
 
 ## References
 
