@@ -10,9 +10,9 @@ The purpose of this exercise is to enable you to configure and use existing clou
 The IBM Cloud platform (like other cloud platforms) provides a huge set of services
 that can be used as ready to use building blocks to enhance your application. These services typically only have to be instantiated and configured to be used.
 
-Such a service might be a database engines like Cloudant, and IOT platform, a mobile services that send push notification, or a service that provides artificial intelligence capabilities like the Watson Tone Anaylzer used in this exercise.
+Such a service might be a database engines like Cloudant, and IOT platform, a mobile services that send push notification, or a service that provides artificial intelligence capabilities like the Watson Tone Analyzer used in this exercise.
 
-The Watson Tone Anaylzer service is able to detect moods and tones in a text submitted to it. In this exercise you will create a new instance of the Watson Tone Analyzer Service and connect it to an existing app that is [provided to you in a Github Repository](https://github.com/HRTCloudDemo/HRTToneDemo).
+The Watson Tone Analyzer service is able to detect moods and tones in a text submitted to it. In this exercise you will create a new instance of the Watson Tone Analyzer Service and connect it to an existing app that is [provided to you in a GitHub Repository](https://github.com/HRTCloudDemo/HRTToneDemo).
 
 ## Subscribe to the IBM Tone Analyzer Service
 
@@ -22,34 +22,34 @@ The Watson Tone Anaylzer service is able to detect moods and tones in a text sub
 
 - Select **Watson** in the menu on the left side
 
-  ![watson](005/watson.png)
+  ![Watson](005/watson.png)
 
 - Click on **Tone Analyzer**
 
-  ![tone](005/tone_tile.png)
+  ![Tone Analyzer](005/tone_tile.png)
 
 - On the next page leave all default values as they are and click **Create**
 
-  Wou will get redirected to another page. At this point of time the service is ready to use
+  You will get redirected to another page. At this point of time the service is ready to use
 
-- The credentials to access your service are displayed in the `Credentials`section on    that page. Please press "show" to reveal username and pasword
+- The credentials to access your service are displayed in the `Credentials` section on that page. Please press "show" to reveal username and password
 
-  ![credentials](005/show_creds.png)
+  ![Credentials](005/show_creds.png)
 
 - Note down url username and password. They will be used in the next section of this     tutorial
 
 ## Get the code of the sample app
 
 The sample app uses the Watson Tone Analyzer service to score lines of text as happy or unhappy.
-The app provides a basic user interface and an API that you will use in an later excercise.
+The app provides a basic user interface and an API that you will use in an later exercise.
 
-- Fork the git repository [linked here](https://github.com/HRTCloudDemo/HRTToneDemo) into your own Github account by pressing the **Fork** button in that Github Repository
+- Fork the git repository [linked here](https://github.com/HRTCloudDemo/HRTToneDemo) into your own GitHub account by pressing the **Fork** button in that GitHub Repository
 
-  ![fork](005/fork.png)
+  ![Fork the repo](005/fork.png)
 
-- Copy the URL of your repository from the Github UI
+- Copy the URL of your repository from the GitHub UI
 
-  ![clone](005/clone.png)
+  ![Copy the fork's URL](005/clone.png)
 
 - Clone your fork of the repository to your local disk
 
@@ -75,7 +75,7 @@ The app provides a basic user interface and an API that you will use in an later
 
 Disclaimer: The scoring algorithm that condenses of the complex response of the Tone Analyzer service to one single word is quite simple and might return surprising results. Feel free to improve.
 
-![toneapp](005/toneapp.png)
+![Tone app](005/toneapp.png)
 
 # Push the working app to IBM Cloud
 
@@ -95,13 +95,13 @@ applications:
   cf api api.eu-de.bluemix.net
   ```
 
-- login into the IBM Cloud using your credentials
+- Login into the IBM Cloud using your credentials
 
   ```bash
   cf login
   ```
 
-- target your organisation and space
+- Target your organization and space
 
   ```bash
   cf target -o <YOUR ORG> -s <YOUR SPACE>
@@ -109,9 +109,9 @@ applications:
 
 - Deploy your app to the cloud
 
-  <code>
+  ```bash
   cf push
-  </code>
+  ```
 
 - Access the app in your browser as https://<span class="app_name">random-app-name</span>.eu-de.bluemix.net
 
@@ -122,6 +122,6 @@ applications:
 * [Source code of the demo application](https://github.com/HRTCloudDemo/HRTToneDemo)
 * [Watson Tone Analyzer](https://www.ibm.com/watson/services/tone-analyzer/)
 * [Watson Tone Analyzer Documentation](https://console.bluemix.net/docs/services/tone-analyzer/index.html#about)
-* [More complete sample app on Github](https://github.com/watson-developer-cloud/tone-analyzer-nodejs)
+* [More complete sample app on GitHub](https://github.com/watson-developer-cloud/tone-analyzer-nodejs)
 
 {% include random_app_name.html %}

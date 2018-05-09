@@ -3,7 +3,7 @@ layout: lab
 title: Collaborate
 ---
 
-In this lab you will create a team of two developers (e.g. with your neighbour) and collaborate on improving the application.
+In this lab you will create a team of two developers (e.g. with your neighbor) and collaborate on improving the application.
 
 # Split the work
 
@@ -28,7 +28,7 @@ One member of the team will act as the author and change the content of the appl
 
 # Create a CI/CD pipeline
 
-1. Invite you parter into your IBM Cloud organisation
+1. Invite you parter into your IBM Cloud organization
 
    In order to enable your partner to work on apps in your organization, you need to [invite her](https://console.bluemix.net/docs/iam/iamuserinv.html#iamuserinv) to collaborate. Please perform the steps in ["Inviting Users"](https://console.bluemix.net/docs/iam/iamuserinv.html#inviting-users) and also those under ["Cloud Foundry access"](https://console.bluemix.net/docs/iam/iamuserinv.html#cloud-foundry-access). You should give your partner `Developer` rights in the `dev` space in the `Germany (Frankfurt)` region.
 
@@ -54,7 +54,7 @@ One member of the team will act as the author and change the content of the appl
 
     ![](004/add-tool.png)
 
-1.  Select the Github tool:
+1.  Select the GitHub tool:
 
     ![](004/github.png)
 

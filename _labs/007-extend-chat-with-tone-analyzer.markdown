@@ -45,5 +45,5 @@ You should use this value to indicate the mood in your chat application.
 * [Source code of the Tone Analyzer application](https://github.com/HRTCloudDemo/HRTToneDemo)
 * [Watson Tone Analyzer Home Page](https://www.ibm.com/watson/services/tone-analyzer/)
 * [Watson Tone Analyzer Documentation](https://console.bluemix.net/docs/services/tone-analyzer/index.html#about)
-* [Request package to call REST APIs from NodeJs](https://github.com/request/request)
+* [Request package to call REST APIs from Node.js](https://github.com/request/request)
 
