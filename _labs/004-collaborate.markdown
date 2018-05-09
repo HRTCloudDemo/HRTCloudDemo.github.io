@@ -3,28 +3,15 @@ layout: lab
 title: Collaborate
 ---
 
-In this lab you will create a team of two developers (e.g. with your neighbor) and collaborate on improving the application.
+In this lab you will create a team of two developers (e.g. with your neighbour) and collaborate on improving the application.
 
 # Split the work
 
 One member of the team will act as the author and change the content of the application (`index.html`). The other member will act as designer and change the visual presentation of the content.
 
 1. Create and embed a minimal CSS file into `index.html`
-1. Test locally
-1. Create a GitHub Repository for the code
-1. Add all files to the repo and push it
-1. Add your team mate as a collaborator
-
-# Invite you parter into your IBM Cloud organisation
-
-To enable your partner to work in your organization you should invite him into it.
-This process is described [here](https://console.bluemix.net/docs/iam/iamuserinv.html#iamuserinv).
-Please perform the steps described in the `Inviting users` and the
-steps under `Cloud Foundry access` in the `Assigning user access` section. You should give your Partner `Developer` rights in the `dev` space in the Germany (Frankfurt) region.
-
-# Create a CI/CD pipeline
-
-1.  Create a `manifest.yml` with the following content:
+1. Test locally (load `index.html` in a browser)
+1. Add a new file called `manifest.yml` with the following content:
 
     <pre>
     applications:
@@ -34,9 +21,22 @@ steps under `Cloud Foundry access` in the `Assigning user access` section. You s
       buildpack: staticfile_buildpack
     </pre>
 
-    on your local machine. Then manually run `cf push` and verify your app is picking up the right name. _IBM Cloud_ is adding your host to the `eu-de.mybluemix.net` domain  by default so your FQDN is <code><span class="app_name">random-app-name</span>.eu-de.mybluemix.net</code>. Once you can access your hostname, commit and push your changes to git and wait for the pipeline to finish.
+1. Run `cf push` and verify your app is picking up the right name. IBM Cloud is adding your host to the `eu-de.mybluemix.net` domain by default so your FQDN is <code><span class="app_name">random-app-name</span>.eu-de.mybluemix.net</code>. Once you can access the app under this URL, commit and push your changes to the local git repo.
+1. Create a GitHub Repository for the code
+1. Follow the instructions to push the repo
+1. Add your team mate as a collaborator to the GitHub repo so that they can push, too
 
-1.  Go to the _IBM Cloud_ main menu and click on **DevOps**, then click on **Continuous Delivery**. Make sure you select "Germany" as region.
+# Create a CI/CD pipeline
+
+1. Invite you parter into your IBM Cloud organisation
+
+   In order to enable your partner to work on apps in your organization, you need to [invite her](https://console.bluemix.net/docs/iam/iamuserinv.html#iamuserinv) to collaborate. Please perform the steps in ["Inviting Users"](https://console.bluemix.net/docs/iam/iamuserinv.html#inviting-users) and also those under ["Cloud Foundry access"](https://console.bluemix.net/docs/iam/iamuserinv.html#cloud-foundry-access). You should give your partner `Developer` rights in the `dev` space in the `Germany (Frankfurt)` region.
+
+1.  Create a new CI/CD service instance
+
+    Go to the [IBM Cloud main menu](https://console.bluemix.net/) and click on **DevOps**, then add a new **Continuous Delivery** service. Make sure you select "Germany" as region.
+
+    You may get an error message if you happen to have an existing CD/CD service because the lite plan is limited to a single instance of this service per user. In that case, just select the existing service and proceed to the next step. Alternatively, you can delete the existing service and create a new one.
 
 1.  Create a new toolchain:
 
@@ -102,7 +102,7 @@ steps under `Cloud Foundry access` in the `Assigning user access` section. You s
 
     ![](004/stage-trigger.png)
 
-1.  Once the deploy finished successfully, you can  find the URL where the app is deployed to in the logs of the stage. It should be the same as the one you soecified in `manifest.yaml`:
+1.  Once the deploy finished successfully, you can find the URL where the app is deployed to in the logs of the stage. It should be the same as the one you specified in `manifest.yml`:
 
     ![](004/logs.png)
 
@@ -110,13 +110,14 @@ steps under `Cloud Foundry access` in the `Assigning user access` section. You s
 
 # Iterate over the application
 
-Now that you have a working pipeline, agree with your team mate on a set of CSS classes for the presentation of the app.
+Now that you have a working pipeline, every commit to the git repository will deploy the changes immediately. Every person in the team can make changes separately, and the pipeline will publish an updated version of your app whenever you `git push`. Therefore you should create small commits and push often.
 
+Follow these steps to work in parallel:
+
+1.  Agree with your team mate on a set of CSS classes for the presentation of the app.
 1.  As the content author, mark your content in a logical way, instead of relying on physical representation, e.g. use `<strong>` instead of `<b>`.
 1.  As the designer, your responsibility is to present the content in a way that supports its intent. Focus on CSS classes and HTML elements that allow for the design freedom you need, but do not overload the content markup with physical layout details.
 1.  The team should then alternate between
 
     - brief sync-up sessions, where the overall structure is discussed and issues are resolved, and
     - periods of independent work, where each member can focus on their part of the app.
-
-    The CI/CD pipeline will publish an updated version of your app whenever you `git push`. Therefore you should create small commits and push often.
