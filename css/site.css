@@ -190,5 +190,6 @@ p,ul li {
     }
 }
 
+.nav { text-align: center }
 .nav .prev { float:left }
 .nav .next { float:right }

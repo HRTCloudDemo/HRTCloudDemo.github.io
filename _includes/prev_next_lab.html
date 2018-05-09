@@ -1,11 +1,6 @@
 {% if site.labs %}
   {% assign labs = site.labs %}
 
-  {% if labs.size > 1 %}
-    {% assign prevurl = labs.last.url %}
-    {% assign nexturl = labs.first.url %}
-  {% endif %}
-
   {% for lab in labs %}
     {% if lab.title == page.title %}
       {% unless forloop.first %}
@@ -26,6 +21,7 @@
       {% if prevurl %}
         <span class="prev"><a href="{{prevurl}}">Previous</a></span>
       {% endif %}
+      <span>Labs</span>
       {% if nexturl %}
         <span class="next"><a href="{{nexturl}}">Next</a></span>
       {% endif %}
