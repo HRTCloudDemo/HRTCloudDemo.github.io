@@ -8,7 +8,7 @@ Images should be resized to be 800px wide. On MacOS, you can use something like 
 
 # Local Test
 
-* Install [jekyll](http://jekyllrb.com/):
+* Install dependencies:
 
   ```bash
   gem install jekyll
@@ -17,18 +17,18 @@ Images should be resized to be 800px wide. On MacOS, you can use something like 
 * Run jekyll
 
   ```bash
-  jekyll serve --baseurl ''
+  jekyll serve
   ```
 
   See [jekyllrb.com/docs/github-pages](http://jekyllrb.com/docs/github-pages/) for details.
 
 * Open [http://localhost:4000/](http://localhost:4000/) in your browser.
 
-Whenever you change one of the files, jekyll will re-generate the site in `_site`. GitHub does the same when we push the repo. Thus, there is no need to check `_site` into git.
+Whenever you change one of the files, jekyll will re-generate the site. GitHub does the same when we push the repo.
 
 # Spell Checker
 
-* Install pandoc and hunspell
+* Install `pandoc` and `hunspell`
 * Download [the dictionary](https://sourceforge.net/projects/aoo-extensions/files/1470/1/en_us.oxt/download)
 * Check spelling:
 
@@ -37,3 +37,7 @@ Whenever you change one of the files, jekyll will re-generate the site in `_site
   ```
 * Add the words you want to accept to `local.dic`
 * Fix the remaining words until the command above yields an empty result
+
+# TODO
+
+* Links using [template tags](https://jekyllrb.com/docs/templates/#links)

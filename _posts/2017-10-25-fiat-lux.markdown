@@ -1,8 +1,0 @@
----
-layout: post
-title: Fiat Lux...
-date: 2017-10-25
-author: Steffen Uhlig
----
-
-...oder auch "Es werde Licht"!
