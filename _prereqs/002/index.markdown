@@ -8,7 +8,7 @@ title: Install Software
 We prepared a Virtual Machine (VM) image that contains all the necessary tools.
 
 * Install [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/)
-* Copy [this file](002/Vagrantfile) into a new directory on your workstation.
+* Copy [this file](Vagrantfile) into a new directory on your workstation.
 * Open a command prompt and enter `vagrant up`
 * Connect to the VM with `vagrant ssh`
 * Start developing!
@@ -24,4 +24,4 @@ Alternatively, you can work directly from your workstation. Make sure you have t
 * [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [`node`](https://nodejs.org/en/) (should come with npm)
 
-On a Mac we recommend using [Homebrew](https://brew.sh/) to install these tools. For Ubuntu, you can follow the steps outlined in the [Vagrantfile](002/Vagrantfile).
+On a Mac we recommend using [Homebrew](https://brew.sh/) to install these tools. For Ubuntu, you can follow the steps outlined in the [Vagrantfile](Vagrantfile).

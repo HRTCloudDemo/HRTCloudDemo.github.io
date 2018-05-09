@@ -38,6 +38,19 @@ Whenever you change one of the files, jekyll will re-generate the site. GitHub d
 * Add the words you want to accept to `local.dic`
 * Fix the remaining words until the command above yields an empty result
 
+# Link Checker
+
+```bash
+npm install broken-link-checker -g
+blc                                    \
+    --filter-level 3                   \
+    --recursive                        \
+    --verbose                          \
+    --exclude http://localhost:3000/   \
+    --exclude http://localhost:12345/  \
+  http://localhost:4000/
+```
+
 # TODO
 
-* Links using [template tags](https://jekyllrb.com/docs/templates/#links)
+* Lab 4 generates two different app names in the JS

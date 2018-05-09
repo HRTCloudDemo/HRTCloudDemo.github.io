@@ -40,7 +40,7 @@ Run `cf push` to push this to IBM Cloud. Only proceed to the next step if your a
 
 ## Create a CI/CD pipeline
 
-Repeat the steps from [lab 3](/labs/003-collaborate.html) and create another pipeline for deploying this app.
+Repeat the steps from [lab 3]({% link _labs/003/index.markdown %}) and create another pipeline for deploying this app.
 
 {% include random_app_name.html %}
 
