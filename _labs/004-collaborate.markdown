@@ -19,7 +19,7 @@ One member of the team will act as the author and change the content of the appl
 
 To enable your partner to work in your organization you should invite him into it.
 This process is described [here](https://console.bluemix.net/docs/iam/iamuserinv.html#iamuserinv).
-Please perform the steps described in the `Inviting users` and the 
+Please perform the steps described in the `Inviting users` and the
 steps under `Cloud Foundry access` in the `Assigning user access` section. You should give your Partner `Developer` rights in the `dev` space in the Germany (Frankfurt) region.
 
 # Create a CI/CD pipeline
@@ -40,71 +40,71 @@ steps under `Cloud Foundry access` in the `Assigning user access` section. You s
 
 1.  Create a new toolchain:
 
-    ![](toolchain-01-create.png)
+    ![](004/create.png)
 
 1.  Select "Build your own toolchain":
 
-    ![](toolchain-02-byo.png)
+    ![](004/byo.png)
 
 1.  Provide a name for the new toolchain:
 
-    ![](toolchain-03-byo-config.png)
+    ![](004/byo-config.png)
 
 1.  Now we need to add a tool to fetch the source code of the app. Add a new tool to this toolchain:
 
-    ![](toolchain-04-add-tool.png)
+    ![](004/add-tool.png)
 
 1.  Select the Github tool:
 
-    ![](toolchain-05-github.png)
+    ![](004/github.png)
 
 1.  Select "Existing repository" and provide the URL to your app's source code:
 
-    ![](toolchain-06-git-configure.png)
+    ![](004/git-configure.png)
 
 1.  Now we need another tool to publish the source code:
 
-    ![](toolchain-07-add-tool.png)
+    ![](004/add-tool.png)
 
 1.  Select "Delivery pipeline":
 
-    ![](toolchain-08-delivery-pipeline.png)
+    ![](004/delivery-pipeline.png)
 
 1.  Provide a name for the new pipeline:
 
-    ![](toolchain-09-delivery-pipeline-name.png)
+    ![](004/delivery-pipeline-name.png)
 
 1.  Configure the delivery pipeline by clicking it:
 
-    ![](toolchain-10-configure-pipeline.png)
+    ![](004/configure-pipeline.png)
 
 1.  Add a stage to it:
 
-    ![](toolchain-11-add-stage.png)
+    ![](004/add-stage.png)
 
 1.  Select the previously configured GitHub source as input of this step:
 
-    ![](toolchain-12-stage-input.png)
+    ![](004/stage-input.png)
 
 1.  In the "Jobs" tab if this stage, add a new job:
 
-    ![](toolchain-13-stage-add-job.png)
+    ![](004/stage-add-job.png)
 
 1.  We want to deploy our source code, so please select "Deploy":
 
-    ![](toolchain-14-stage-deploy.png)
+    ![](004/stage-deploy.png)
 
 1.  Make sure you select your organization and the desired stage (e.g. "dev"):
 
-    ![](toolchain-15-org-space.png)
+    ![](004/org-space.png)
 
 1.  Once saved, the stage will run whenever a new commit has arrived at the GitHub repository. As a one-off, you can be start a deploy manually:
 
-    ![](toolchain-16-stage-trigger.png)
+    ![](004/stage-trigger.png)
 
 1.  Once the deploy finished successfully, you can  find the URL where the app is deployed to in the logs of the stage. It should be the same as the one you soecified in `manifest.yaml`:
 
-    ![](toolchain-17-logs.png)
+    ![](004/logs.png)
 
 {% include random_app_name.html %}
 

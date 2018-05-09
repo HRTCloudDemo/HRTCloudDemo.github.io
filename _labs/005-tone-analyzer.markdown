@@ -23,15 +23,15 @@ The purpose of this exercise is to enable you to configure and use existing clou
 
 - Go to the _IBM Cloud_ main menu and click on **Catalog**,
 
-  ![catalog](lab4_catalog.png?raw=true)
+  ![catalog](005/catalog.png)
 
 - Select **Watson** in the menu on the left side
 
-  ![watson](lab4_watson.png?raw=true)
+  ![watson](005/watson.png)
 
 - Click on **Tone Analyzer**
 
-  ![tone](lab4_tone_tile.png?raw=true)
+  ![tone](005/tone_tile.png)
 
 - On the next page leave all default values as they are and click **Create**
 
@@ -39,7 +39,7 @@ The purpose of this exercise is to enable you to configure and use existing clou
 
 - The credentials to access your service are displayed in the `Credentials`section on    that page. Please press "show" to reveal username and pasword
 
-  ![credentials](lab4_show_creds.png?raw=true)
+  ![credentials](005/show_creds.png)
 
 - Note down url username and password. They will be used in the next section of this     tutorial
 
@@ -50,11 +50,11 @@ The app provides a basic user interface and an API that you will use in an later
 
 - Fork the git repository [linked here](https://github.com/HRTCloudDemo/HRTToneDemo) into your own Github account by pressing the **Fork** button in that Github Repository
 
-  ![fork](lab4_fork.png?raw=true)
+  ![fork](005/fork.png)
 
 - Copy the URL of your repository from the Github UI
 
-  ![clone](lab4_clone.png?raw=true)
+  ![clone](005/clone.png)
 
 - Clone your fork of the repository to your local disk
 
@@ -77,7 +77,7 @@ The app provides a basic user interface and an API that you will use in an later
 
 Disclaimer: The scoring algorithm that condenses of the complex response of the Tone Analyzer service to one single word is quite simple and might return surprising results. Feel free to improve.
 
-![toneapp](lab4_toneapp.png?raw=true)
+![toneapp](005/toneapp.png)
 
 # Push the working app to IBM Cloud
 
