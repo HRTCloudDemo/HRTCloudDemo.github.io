@@ -1,6 +1,6 @@
 ---
 layout: lab
-title: Run a static webpage on IBM Cloud
+title: Run a Static Webpage on IBM Cloud
 ---
 
 ## Create a simple HTML file

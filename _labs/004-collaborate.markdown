@@ -1,6 +1,6 @@
 ---
 layout: lab
-title: Collaborate
+title: Collaborate within a Team
 ---
 
 In this lab you will create a team of two developers (e.g. with your neighbor) and collaborate on improving the application.
