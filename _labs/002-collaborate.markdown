@@ -40,71 +40,71 @@ One member of the team will act as the author and change the content of the appl
 
 1.  Create a new toolchain:
 
-    ![](004/create.png)
+    ![](002/create.png)
 
 1.  Select "Build your own toolchain":
 
-    ![](004/byo.png)
+    ![](002/byo.png)
 
 1.  Provide a name for the new toolchain:
 
-    ![](004/byo-config.png)
+    ![](002/byo-config.png)
 
 1.  Now we need to add a tool to fetch the source code of the app. Add a new tool to this toolchain:
 
-    ![](004/add-tool.png)
+    ![](002/add-tool.png)
 
 1.  Select the GitHub tool:
 
-    ![](004/github.png)
+    ![](002/github.png)
 
 1.  Select "Existing repository" and provide the URL to your app's source code:
 
-    ![](004/git-configure.png)
+    ![](002/git-configure.png)
 
 1.  Now we need another tool to publish the source code:
 
-    ![](004/add-tool.png)
+    ![](002/add-tool.png)
 
 1.  Select "Delivery pipeline":
 
-    ![](004/delivery-pipeline.png)
+    ![](002/delivery-pipeline.png)
 
 1.  Provide a name for the new pipeline:
 
-    ![](004/delivery-pipeline-name.png)
+    ![](002/delivery-pipeline-name.png)
 
 1.  Configure the delivery pipeline by clicking it:
 
-    ![](004/configure-pipeline.png)
+    ![](002/configure-pipeline.png)
 
 1.  Add a stage to it:
 
-    ![](004/add-stage.png)
+    ![](002/add-stage.png)
 
 1.  Select the previously configured GitHub source as input of this step:
 
-    ![](004/stage-input.png)
+    ![](002/stage-input.png)
 
 1.  In the "Jobs" tab if this stage, add a new job:
 
-    ![](004/stage-add-job.png)
+    ![](002/stage-add-job.png)
 
 1.  We want to deploy our source code, so please select "Deploy":
 
-    ![](004/stage-deploy.png)
+    ![](002/stage-deploy.png)
 
 1.  Make sure you select your organization and the desired stage (e.g. "dev"):
 
-    ![](004/org-space.png)
+    ![](002/org-space.png)
 
 1.  Once saved, the stage will run whenever a new commit has arrived at the GitHub repository. As a one-off, you can be start a deploy manually:
 
-    ![](004/stage-trigger.png)
+    ![](002/stage-trigger.png)
 
 1.  Once the deploy finished successfully, you can find the URL where the app is deployed to in the logs of the stage. It should be the same as the one you specified in `manifest.yml`:
 
-    ![](004/logs.png)
+    ![](002/logs.png)
 
 {% include random_app_name.html %}
 

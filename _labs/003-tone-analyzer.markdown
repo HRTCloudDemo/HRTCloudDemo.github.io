@@ -18,15 +18,15 @@ The Watson Tone Analyzer service is able to detect moods and tones in a text sub
 
 - Go to the _IBM Cloud_ main menu and click on **Catalog**,
 
-  ![catalog](005/catalog.png)
+  ![catalog](003/catalog.png)
 
 - Select **Watson** in the menu on the left side
 
-  ![Watson](005/watson.png)
+  ![Watson](003/watson.png)
 
 - Click on **Tone Analyzer**
 
-  ![Tone Analyzer](005/tone_tile.png)
+  ![Tone Analyzer](003/tone_tile.png)
 
 - On the next page leave all default values as they are and click **Create**
 
@@ -34,7 +34,7 @@ The Watson Tone Analyzer service is able to detect moods and tones in a text sub
 
 - The credentials to access your service are displayed in the `Credentials` section on that page. Please press "show" to reveal username and password
 
-  ![Credentials](005/show_creds.png)
+  ![Credentials](003/show_creds.png)
 
 - Note down url username and password. They will be used in the next section of this     tutorial
 
@@ -45,11 +45,11 @@ The app provides a basic user interface and an API that you will use in an later
 
 - Fork the git repository [linked here](https://github.com/HRTCloudDemo/HRTToneDemo) into your own GitHub account by pressing the **Fork** button in that GitHub Repository
 
-  ![Fork the repo](005/fork.png)
+  ![Fork the repo](003/fork.png)
 
 - Copy the URL of your repository from the GitHub UI
 
-  ![Copy the fork's URL](005/clone.png)
+  ![Copy the fork's URL](003/clone.png)
 
 - Clone your fork of the repository to your local disk
 
@@ -61,7 +61,7 @@ The app provides a basic user interface and an API that you will use in an later
 
 - Rename `.env.sample` to `.env`
 
-  On Windows you cannot do this in the Explorer. 
+  On Windows you cannot do this in the Explorer.
   Instead, you can use the `rename` command in a Command Window change the name of the file.
 
 - Edit the `.env` and fill in username, password and url of your instance of the Tone Analyzer service
@@ -76,7 +76,7 @@ The app provides a basic user interface and an API that you will use in an later
 
 Disclaimer: The scoring algorithm that condenses the complex response of the Tone Analyzer service to one single word is quite simple and might return surprising results. Feel free to improve.
 
-![Tone app](005/toneapp.png)
+![Tone app](003/toneapp.png)
 
 # Push the working app to IBM Cloud
 
