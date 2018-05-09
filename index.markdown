@@ -5,7 +5,15 @@ title: Welcome
 
 # {{ page.title }}
 
-to the _IBM Cloud_ Workshop at Hochschule Reutlingen.
+to the [IBM Cloud](https://www.ibm.com/cloud/) workshop at Hochschule Reutlingen.
+
+## Prerequisites
+
+Please complete the following steps _before_ coming to the lab:
+
+{% for prereq in site.prereqs %}
+  1. [{{ prereq.title }}]({{ site.baseurl }}{{ prereq.url }})
+{% endfor %}
 
 ## Labs
 

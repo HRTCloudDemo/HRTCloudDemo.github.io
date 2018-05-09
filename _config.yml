@@ -1,3 +1,5 @@
 collections:
   labs:
     output: true
+  prereqs:
+    output: true

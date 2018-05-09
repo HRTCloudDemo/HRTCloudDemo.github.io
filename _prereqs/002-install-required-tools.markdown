@@ -1,6 +1,6 @@
 ---
-layout: lab
-title: Install prerequisite software
+layout: prereq
+title: Install Software
 ---
 
 ## Simple

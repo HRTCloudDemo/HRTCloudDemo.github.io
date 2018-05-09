@@ -1,5 +1,5 @@
 ---
-layout: lab
+layout: prereq
 title: Create IBM Cloud-Account
 ---
 

@@ -1,0 +1,30 @@
+{% if site.prereqs %}
+  {% assign prereqs = site.prereqs %}
+
+  {% for prereq in prereqs %}
+    {% if prereq.title == page.title %}
+      {% unless forloop.first %}
+        {% assign prevurl = prev.url %}
+      {% endunless %}
+
+      {% unless forloop.last %}
+        {% assign next = prereqs[forloop.index] %}
+        {% assign nexturl = next.url %}
+      {% endunless %}
+    {% endif %}
+
+    {% assign prev = prereq %}
+  {% endfor %}
+
+  <div class="nav">
+    {% if prereqs.size > 1 %}
+      {% if prevurl %}
+        <span class="prev"><a href="{{prevurl}}">Previous</a></span>
+      {% endif %}
+      <span>Prerequisites</span>
+      {% if nexturl %}
+        <span class="next"><a href="{{nexturl}}">Next</a></span>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endif %}
