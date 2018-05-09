@@ -3,21 +3,16 @@ layout: lab
 title: Consuming Cloud Services
 ---
 
+The purpose of this exercise is to enable you to configure and use existing cloud services to add value to your application without much work.
+
 ## Introduction
 
 The IBM Cloud platform (like other cloud platforms) provides a huge set of services
-that can be used as ready to use building blocks to enhance your application.
+that can be used as ready to use building blocks to enhance your application. These services typically only have to be instantiated and configured to be used.
 
-These services typically only have to be instantiated and configured to be used.
+Such a service might be a database engines like Cloudant, and IOT platform, a mobile services that send push notification, or a service that provides artificial intelligence capabilities like the Watson Tone Anaylzer used in this exercise.
 
-Such a service might be a database engines like Cloudant, and IOT platform,
-a mobile services that send push notification or might provide to artificial intelligence capabilities like the Watson Tone Anaylzer used in this exercise.
-
-The Watson Tone Anaylzer service is able to detect moods and tones in a text submitted to it.
-
-In this exercise you will instantiate an instance of the Watson Tone Analyzer Service and connect it to a simple app that is provided to you in a Github Repository.
-
-The purpose of this exercise is to enable you to configure and use existing cloud services to add value to your application without much work.
+The Watson Tone Anaylzer service is able to detect moods and tones in a text submitted to it. In this exercise you will create a new instance of the Watson Tone Analyzer Service and connect it to an existing app that is [provided to you in a Github Repository](https://github.com/HRTCloudDemo/HRTToneDemo).
 
 ## Subscribe to the IBM Tone Analyzer Service
 
