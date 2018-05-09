@@ -73,5 +73,3 @@ title: Run a Static Webpage on IBM Cloud
 
 * [Getting Started with the `cf` CLI](https://docs.cloudfoundry.org/cf-cli/getting-started.html)
 * [Staticfile Buildpack](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html)
-
-{% include random_app_name.html %}

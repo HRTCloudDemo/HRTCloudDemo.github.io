@@ -124,5 +124,3 @@ applications:
 * [Watson Tone Analyzer](https://www.ibm.com/watson/services/tone-analyzer/)
 * [Watson Tone Analyzer Documentation](https://console.bluemix.net/docs/services/tone-analyzer/index.html#about)
 * [More complete sample app on GitHub](https://github.com/watson-developer-cloud/tone-analyzer-nodejs)
-
-{% include random_app_name.html %}

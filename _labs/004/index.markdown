@@ -42,14 +42,10 @@ Run `cf push` to push this to IBM Cloud. Only proceed to the next step if your a
 
 Repeat the steps from [lab 3]({% link _labs/003/index.markdown %}) and create another pipeline for deploying this app.
 
-{% include random_app_name.html %}
-
 ## Test
 
 Go to https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net
 
 ## References
 
- * [Create a Toolchain](https://console.bluemix.net/docs/toolchains/toolchains_overview.html)
-
-{% include random_app_name.html %}
+* [Create a Toolchain](https://console.bluemix.net/docs/toolchains/toolchains_overview.html)

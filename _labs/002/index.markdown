@@ -106,8 +106,6 @@ One member of the team will act as the author and change the content of the appl
 
     ![](logs.png)
 
-{% include random_app_name.html %}
-
 # Iterate over the application
 
 Now that you have a working pipeline, every commit to the git repository will deploy the changes immediately. Every person in the team can make changes separately, and the pipeline will publish an updated version of your app whenever you `git push`. Therefore you should create small commits and push often.

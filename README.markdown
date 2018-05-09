@@ -50,7 +50,3 @@ blc                                    \
     --exclude http://localhost:12345/  \
   http://localhost:4000/
 ```
-
-# TODO
-
-* Lab 4 generates two different app names in the JS
