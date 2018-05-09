@@ -1,6 +1,6 @@
 ---
 layout: lab
-title: Consuming Cloud Services
+title: Consume a Cloud Service
 ---
 
 The purpose of this exercise is to enable you to configure and use existing cloud services to add value to your application without much work.
