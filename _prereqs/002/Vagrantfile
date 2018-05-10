@@ -1,5 +1,6 @@
 Vagrant.configure('2') do |config|
   config.vm.box = 'ubuntu/bionic64'
+  config.vm.hostname = 'ibm-cloud-workshop'
   config.vm.network "forwarded_port", guest: 3000, host: 12345
 
   config.vm.provision 'shell', privileged: true, inline: <<~SCRIPT
