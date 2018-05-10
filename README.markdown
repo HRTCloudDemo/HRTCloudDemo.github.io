@@ -1,4 +1,6 @@
-This is the web site for Hochschule Reutlingen Cloud Demos.
+# IBM Cloud Workshop
+
+This is the web site for the [IBM Cloud Workshop](https://hrtclouddemo.github.io/) at Hochschule Reutlingen.
 
 # Publish New Content
 
