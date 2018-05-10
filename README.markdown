@@ -31,7 +31,9 @@ Whenever you change one of the files, jekyll will re-generate the site. GitHub d
 # Spell Checker
 
 * Install `pandoc` and `hunspell`
-* Download [the dictionary](https://sourceforge.net/projects/aoo-extensions/files/1470/1/en_us.oxt/download)
+* Install the dictionary
+  - On Debian, just run `apt-get install hunspell hunspell-en-us` and everything will be in the right places
+  - On a Mac, download [the dictionary](https://sourceforge.net/projects/aoo-extensions/files/1470/1/en_us.oxt/download)
 * Check spelling:
 
   ```bash
