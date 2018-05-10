@@ -17,5 +17,7 @@ Vagrant.configure('2') do |config|
     apt-get install -y git cf-cli nodejs npm build-essential
   SCRIPT
 
-  config.vm.provision 'shell', privileged: false, inline: 'touch ~/.hushlogin'
+  config.vm.provision 'shell', privileged: false, inline: <<~SCRIPT
+    touch ~/.hushlogin
+  SCRIPT
 end
