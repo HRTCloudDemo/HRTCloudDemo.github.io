@@ -33,14 +33,18 @@ Whenever you change one of the files, jekyll will re-generate the site. GitHub d
 * Install `pandoc` and `hunspell`
 * Install the dictionary
   - On Debian, just run `apt-get install hunspell hunspell-en-us` and everything will be in the right places
-  - On a Mac, download [the dictionary](https://sourceforge.net/projects/aoo-extensions/files/1470/1/en_us.oxt/download)
+  - On a Mac, download [the dictionary](https://sourceforge.net/projects/aoo-extensions/files/1470/1/en_us.oxt/download) and put the `en_US.*` files into `/Library/Spelling/`
 * Check spelling:
 
   ```bash
-  pandoc _labs/00*.markdown -t plain | DICPATH=.:~/Downloads/dict-en_US/ hunspell -d en_US -p local.dic -l | sort -u
+  bundle exec rake test:spelling
   ```
-* Add the words you want to accept to `local.dic`
-* Fix the remaining words until the command above yields an empty result
+
+* For each offending word,
+  - add it to `local.dic` if you want to accept it as spelled correctly, or
+  - fix the word in the source file
+
+  Repeat until the command above yields an empty result.
 
 # Link Checker
 
