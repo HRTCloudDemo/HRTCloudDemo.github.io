@@ -10,21 +10,21 @@ Images should be resized to be 800px wide. On MacOS, you can use something like 
 
 # Local Test
 
-* Install dependencies:
+1. Install dependencies:
 
-  ```bash
-  gem install jekyll
-  ```
+   ```bash
+   bundle install
+   ```
 
-* Run jekyll
+1. Run jekyll
 
-  ```bash
-  jekyll serve
-  ```
+   ```bash
+   bundle exec jekyll serve
+   ```
 
-  See [jekyllrb.com/docs/github-pages](http://jekyllrb.com/docs/github-pages/) for details.
+   See [jekyllrb.com/docs/github-pages](http://jekyllrb.com/docs/github-pages/) for details.
 
-* Open [http://localhost:4000/](http://localhost:4000/) in your browser.
+* Open [localhost:4000/](http://localhost:4000/) in your browser.
 
 Whenever you change one of the files, jekyll will re-generate the site. GitHub does the same when we push the repo.
 
@@ -45,12 +45,5 @@ Whenever you change one of the files, jekyll will re-generate the site. GitHub d
 # Link Checker
 
 ```bash
-npm install broken-link-checker -g
-blc                                    \
-    --filter-level 3                   \
-    --recursive                        \
-    --verbose                          \
-    --exclude http://localhost:3000/   \
-    --exclude http://localhost:12345/  \
-  http://localhost:4000/
+bundle exec rake test:links
 ```

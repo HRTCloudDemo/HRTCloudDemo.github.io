@@ -1,3 +1,4 @@
 _site
 .vagrant
 *.log
+.rake_t_cache
