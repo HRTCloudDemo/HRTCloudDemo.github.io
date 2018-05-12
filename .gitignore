@@ -1,4 +1,5 @@
+*.log
+.rake_tasks~
+.rake_t_cache
 _site
 .vagrant
-*.log
-.rake_t_cache
