@@ -1,5 +1,8 @@
 <script type="text/javascript" src="{{ site.baseurl }}/js/random-app-name.js"></script>
 <script type="text/javascript" src="https://unpkg.com/js-cookie@2.2.0/src/js.cookie.js"></script>
 <script type="text/javascript">replaceRandomAppName()</script>
-<a href="#" onclick="resetRandomAppName(); return false" class="random-app-name-reset">Reset random app name</a>
-<div style="clear: both"/>
+
+<li class="pure-menu-item" id="reset-random-app-name">
+  <a href="#" onclick="resetRandomAppName(); return false" class="random-app-name-reset">Reset random app name</a>
+</li>
+<script type="text/javascript">moveResetRandomAppName()</script>

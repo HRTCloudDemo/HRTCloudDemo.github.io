@@ -18,6 +18,18 @@ function resetRandomAppName() {
   location.reload();
 }
 
+function moveResetRandomAppName() {
+  var reset_button = document.getElementById('reset-random-app-name');
+  var footer_menu = document.getElementById('footer-menu');
+
+  if (!reset_button || !footer_menu) {
+    // https://swizec.com/blog/how-to-properly-wait-for-dom-elements-to-show-up-in-modern-browsers/swizec/6663
+    window.requestAnimationFrame(moveResetRandomAppName);
+  } else {
+     footer_menu.appendChild(reset_button);
+   }
+}
+
 function replaceRandomAppName() {
   app_name = Cookies.get(RANDOM_APP_NAME, { path: '' });
 
