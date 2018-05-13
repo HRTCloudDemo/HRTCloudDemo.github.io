@@ -17,9 +17,9 @@ end
 namespace :test do
   desc 'Spell check'
   task :spelling => [ :pandoc, :hunspell ] do
-    spelling_errors = FileList['_labs/**/*.markdown', '_prereqs/**/*.markdown'].map do |html_file|
-      unknown_words = `pandoc -t plain '#{html_file}' | hunspell -d en_US -p local.dic -l`.split.uniq
-      [html_file, unknown_words] unless unknown_words.empty?
+    spelling_errors = FileList['_labs/**/*.markdown', '_prereqs/**/*.markdown'].map do |source_file|
+      unknown_words = `pandoc -t plain '#{source_file}' | hunspell -d en_US -p local.dic -l`.split.uniq
+      [source_file, unknown_words] unless unknown_words.empty?
     end.compact
 
     if spelling_errors.any?

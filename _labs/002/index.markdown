@@ -100,11 +100,11 @@ One member of the team will act as the author and change the content of the appl
 
     ![](org-space.png)
 
-1.  Once saved, the stage will run whenever a new commit has arrived at the GitHub repository. As a one-off, you can be start a deploy manually:
+1.  Once saved, the stage will run whenever a new commit has arrived at the GitHub repository. As a one-off, you can trigger a deploy manually:
 
     ![](stage-trigger.png)
 
-1.  Once the deploy finished successfully, you can find the URL where the app is deployed to in the logs of the stage. It should be the same as the one you specified in `manifest.yml`:
+1.  After the deploy finished successfully, you can find the URL of the deployed app in the logs of the stage. It should be the same as the one you specified in `manifest.yml`:
 
     ![](logs.png)
 
