@@ -26,7 +26,10 @@ function moveResetRandomAppName() {
     // https://swizec.com/blog/how-to-properly-wait-for-dom-elements-to-show-up-in-modern-browsers/swizec/6663
     window.requestAnimationFrame(moveResetRandomAppName);
   } else {
-     footer_menu.appendChild(reset_button);
+      separator = document.createElement("li");
+      separator.setAttribute("class", "pure-menu-separator")
+      footer_menu.appendChild(separator);
+      footer_menu.appendChild(reset_button);
    }
 }
 
