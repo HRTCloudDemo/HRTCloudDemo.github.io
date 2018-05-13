@@ -3,3 +3,6 @@ collections:
     output: true
   prereqs:
     output: true
+
+plugins:
+  - jekyll-sitemap

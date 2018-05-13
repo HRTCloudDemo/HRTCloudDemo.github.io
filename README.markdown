@@ -8,7 +8,7 @@ Add your Markdown or HTML files to `_labs` and `git push`. GitHub Pages will upd
 
 Images should be resized to be 800px wide. On MacOS, you can use something like `sips --resampleHeightWidthMax 800 _labs/toolchain-*.png`.
 
-# Local Test
+# Development / Test
 
 1. Install dependencies:
 
@@ -19,7 +19,7 @@ Images should be resized to be 800px wide. On MacOS, you can use something like 
 1. Run jekyll
 
    ```bash
-   bundle exec jekyll serve
+   bundle exec jekyll serve --livereload
    ```
 
    See [jekyllrb.com/docs/github-pages](http://jekyllrb.com/docs/github-pages/) for details.
