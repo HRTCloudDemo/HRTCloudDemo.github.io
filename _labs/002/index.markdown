@@ -26,7 +26,7 @@ One member of the team will act as the author and change the content of the appl
    Once you can access the app under this URL, commit and push your changes to the local git repo.
 1. Create a GitHub Repository for the code
 1. Follow the instructions to push the repo
-1. Add your team mate as a collaborator to the GitHub repo so that they can push, too
+1. [Add your team mate as a collaborator](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/) to the GitHub repo so that they can push, too
 
 # Create a CI/CD pipeline
 
