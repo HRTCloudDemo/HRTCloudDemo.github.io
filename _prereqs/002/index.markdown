@@ -8,12 +8,20 @@ title: Install Software
 We prepared a Virtual Machine (VM) image that contains all the necessary tools.
 
 * Install [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/)
-* Copy [this file](Vagrantfile) into a new directory on your workstation.
-* Open a command prompt and enter `vagrant up`
+* Create a new directory on your workstation, e.g. `ibm-cloud-lab`
+* Create a new text file with the name `Vagrantfile` within that directory
+* Copy the following content into this file:
+
+```ruby
+{% include_relative Vagrantfile %}
+```
+
+* Open a command prompt
+* Change to the previously created directory (where the `Vagrantfile` is) and enter `vagrant up`
 * Connect to the VM with `vagrant ssh`
 * Start developing!
 
-  Again, if you do all your development in `/vagrant`, you will be able to edit all files from your workstation as they are next to your `Vagrantfile`.
+All files from your workstation that are in the same directory as the `Vagrantfile` will be visible in the VM at `/vagrant`. Therefore you may use your workstation's editor and run the code within the VM (as long as you work within `/vagrant`).
 
 ## Advanced
 
