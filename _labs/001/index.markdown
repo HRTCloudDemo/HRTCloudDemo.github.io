@@ -37,7 +37,7 @@ title: Run a Static Webpage on IBM Cloud
 1.  In your local terminal, log on to the IBM Cloud using `cf`:
 
     <pre>
-    cf login -a https://api.eu-de.bluemix.net
+    ibmcloud login -a https://api.eu-de.bluemix.net
     </pre>
 
     Provide your username and password and select the organization and space. If no space exists yet, create one using `cf create-space dev -o $ORG_NAME`, where `$ORG_NAME` is the name of the org you choose on first login. This is typically your email address.
@@ -45,7 +45,7 @@ title: Run a Static Webpage on IBM Cloud
 1.  Push the app:
 
     <pre>
-    cf push <span class="app_name">random-app-name</span> -b staticfile_buildpack
+    ibmcloud cf push <span class="app_name">random-app-name</span> -b staticfile_buildpack -m 256M
     </pre>
 
     - The `-b` switch tells Cloud Foundry (CF) to use the static file buildpack for this application. Usually CF detects the type of application you want to deploy automatically. However, so far, our "application" is so simple that we need to tell CF that it should treat it as a set of static files.
@@ -57,14 +57,14 @@ title: Run a Static Webpage on IBM Cloud
     <pre>
     requested state: started
     instances: 1/1
-    usage: 1G x 1 instances
+    usage: 256M x 1 instances
     urls: <span class="app_name">random-app-name</span>.eu-de.mybluemix.net
     last uploaded: Wed Nov 8 18:26:38 UTC 2017
     stack: cflinuxfs2
     buildpack: staticfile_buildpack
 
          state     since                    cpu    memory       disk       details
-    #0   running   2017-11-08 07:26:52 PM   0.0%   3.9M of 1G   7M of 1G
+    #0   running   2017-11-08 07:26:52 PM   0.0%   11.2M of 256M   7M of 1G
     </pre>
 
   Open the URL in a browser and verify that the page looks just like when you opened it locally.
