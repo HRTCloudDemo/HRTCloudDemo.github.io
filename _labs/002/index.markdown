@@ -16,12 +16,12 @@ One member of the team will act as the author and change the content of the appl
     <pre>
     applications:
     - name: <span class="app_name">random-app-name</span>
-      memory: 128M
+      memory: 256M
       host: <span class="app_name">random-app-name</span>
       buildpack: staticfile_buildpack
     </pre>
 
-1. Run `cf push` and verify your app is picking up the right name. IBM Cloud is adding your host to the `eu-de.mybluemix.net` domain by default, so that the complete URL becomes <code><a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a></code>.
+1. Run `ibmcloud cf push` and verify your app is picking up the right name. IBM Cloud is adding your host to the `eu-de.mybluemix.net` domain by default, so that the complete URL becomes <code><a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a></code>.
 
    Once you can access the app under this URL, commit and push your changes to the local git repo.
 1. Create a GitHub Repository for the code
@@ -60,13 +60,20 @@ One member of the team will act as the author and change the content of the appl
 
     ![](github.png)
 
+1.  You need to authorize **IBM Cloud** to talk to your github repository:
+
+    ![](github-auth.png)
+
+1.  On the GitHub page, click **Authorize IBM Cloud**
+    ![](github-auth2.png)
+
 1.  Select "Existing repository" and provide the URL to your app's source code:
 
     ![](git-configure.png)
 
 1.  Now we need another tool to publish the source code:
 
-    ![](add-tool.png)
+    ![](add-tool.png)g
 
 1.  Select "Delivery pipeline":
 
@@ -82,7 +89,7 @@ One member of the team will act as the author and change the content of the appl
 
 1.  Add a stage to it:
 
-    ![](add-stage.png)
+    ![](add-stage.pngs)
 
 1.  Select the previously configured GitHub source as input of this step:
 
@@ -96,7 +103,7 @@ One member of the team will act as the author and change the content of the appl
 
     ![](stage-deploy.png)
 
-1.  Make sure you select your organization and the desired stage (e.g. "dev"):
+1.  Make sure you select your organization and the desired stage (e.g. "dev"). If there is no space or org selectable, try changing the region selector. **Be sure** to also clear out the _Application Name_ field and also remove the _${CF_APP}_ variable. This ensures that the name from the _manifest.yml_ is used:
 
     ![](org-space.png)
 
