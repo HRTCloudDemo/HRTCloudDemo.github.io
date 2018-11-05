@@ -20,7 +20,7 @@ The Watson Tone Analyzer service is able to detect moods and tones in a text sub
 
   ![catalog](catalog.png)
 
-- Select **Watson** in the menu on the left side
+- Select **AI** in the menu on the left side
 
   ![Watson](watson.png)
 
@@ -28,7 +28,7 @@ The Watson Tone Analyzer service is able to detect moods and tones in a text sub
 
   ![Tone Analyzer](tone_tile.png)
 
-- On the next page leave all default values as they are and click **Create**
+- On the next page select the Frankfurt region and your org and space and click **Create**
 
   You will get redirected to another page. At this point of time the service is ready to use
 
@@ -36,7 +36,7 @@ The Watson Tone Analyzer service is able to detect moods and tones in a text sub
 
   ![Credentials](show_creds.png)
 
-- Note down url username and password. They will be used in the next section of this     tutorial
+- Note down url, username and password. They will be used in the next section of this tutorial
 
 ## Get the code of the sample app
 
@@ -62,9 +62,9 @@ The app provides a basic user interface and an API that you will use in an later
 - Rename `.env.sample` to `.env`
 
   On Windows you cannot do this in the Explorer.
-  Instead, you can use the `rename` command in a Command Window change the name of the file.
+  Instead, you have to use the `rename` command in a Command Window to change the name of the file.
 
-- Edit the `.env` and fill in username, password and url of your instance of the Tone Analyzer service
+- Edit `.env` and fill in username, password and url of your instance of the Tone Analyzer service
 
 # Test the app locally
 
@@ -87,7 +87,6 @@ In the root directory of the app create a file named `manifest.yml` with the fol
 applications:
 - name: <span class="app_name"><span class="app_name">random-app-name</span></span>
   memory: 128M
-  host: <span class="app_name"><span class="app_name">random-app-name</span></span>
 </pre>
 
 - Set the API endpoint to your region
