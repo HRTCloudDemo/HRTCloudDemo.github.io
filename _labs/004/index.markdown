@@ -31,7 +31,7 @@ that connect external users to your application.
 In your app you can find out correct port at startup like this:
 
 <pre>
-let port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
+let port = process.env.PORT || 3000;
 </pre>
 
 ## Deploy
