@@ -37,7 +37,7 @@ title: Run a Static Webpage on IBM Cloud
 1.  In your local terminal, log on to the IBM Cloud using `cf`:
 
     <pre>
-    cf login -a https://api.eu-de.bluemix.net
+    cf login -a https://api.eu-gb.bluemix.net
     </pre>
 
     Provide your username and password and select the organization and space. If no space exists yet, create one using `cf create-space dev -o $ORG_NAME`, where `$ORG_NAME` is the name of the org you choose on first login. This is typically your email address.
