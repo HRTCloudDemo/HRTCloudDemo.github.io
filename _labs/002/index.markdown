@@ -39,83 +39,83 @@ One member of the team will act as the author and change the content of the appl
 
 1.  Create a new CI/CD service instance
 
-    Go to the [IBM Cloud main menu](https://console.bluemix.net/) and click on **DevOps**, then add a new **Continuous Delivery** service. Make sure you select "Germany" as region.
+    Go to the [IBM Cloud main menu](https://console.bluemix.net/) and click on **DevOps**, then add a new **Toolchains** service. Make sure you select "Germany" as region.
 
     You may get an error message if you happen to have an existing CD/CD service because the lite plan is limited to a single instance of this service per user. In that case, just select the existing service and proceed to the next step. Alternatively, you can delete the existing service and create a new one.
 
-1.  Create a new toolchain:
+2.  Create a new toolchain:
 
     ![](create.png)
 
-1.  Select "Build your own toolchain":
+3.  Select "Build your own toolchain":
     ![](byo.png)
 
-1.  Provide a name for the new toolchain:
+4.  Provide a name for the new toolchain:
 
     ![](byo-config.png)
 
-1.  Now we need to add a tool to fetch the source code of the app. Add a new tool to this toolchain:
+5.  Now we need to add a tool to fetch the source code of the app. Add a new tool to this toolchain:
 
     ![](add-tool.png)
 
-1.  Select the GitHub tool:
+6.  Select the GitHub tool:
 
     ![](github.png)
 
-1.  You need to authorize **IBM Cloud** to talk to your github repository:
+7.  You need to authorize **IBM Cloud** to talk to your github repository:
 
     ![](github-auth.png)
 
-1.  On the GitHub page, click **Authorize IBM Cloud**
+8.  On the GitHub page, click **Authorize IBM Cloud**
     ![](github-auth2.png)
 
-1.  Select "Existing repository" and provide the URL to your app's source code:
+9.  Select "Existing repository" and provide the URL to your app's source code:
 
     ![](git-configure.png)
 
-1.  Now we need another tool to publish the source code:
+10. Now we need another tool to publish the source code:
 
     ![](add-tool.png)g
 
-1.  Select "Delivery pipeline":
+11. Select "Delivery pipeline":
 
     ![](delivery-pipeline.png)
 
-1.  Provide a name for the new pipeline:
+12. Provide a name for the new pipeline:
 
     ![](delivery-pipeline-name.png)
 
-1.  Configure the delivery pipeline by clicking it:
+13. Configure the delivery pipeline by clicking it:
 
     ![](configure-pipeline.png)
 
-1.  Add a stage to it:
+14. Add a stage to it:
 
     ![](add-stage.png)
 
-1.  Select the previously configured GitHub source as input of this step:
+15. Select the previously configured GitHub source as input of this step:
 
     ![](stage-input.png)
 
-1.  In the "Jobs" tab if this stage, add a new job:
+16. In the "Jobs" tab if this stage, add a new job:
 
     ![](stage-add-job.png)
 
-1.  We want to deploy our source code, so please select "Deploy":
+17. We want to deploy our source code, so please select "Deploy":
 
     ![](stage-deploy.png)
 
-1. You will need a 'Platform API Key' in the next step. To generate one, you can either use the command line interface like `ibmcloud iam api-key-create myapikey` or generate one in the Browser under "Manage -> Security -> Platform API Keys". Store the key away as it will not be visible after you closed the pop-up window.
+18. You will need a 'Platform API Key' in the next step. To generate one, you can either use the command line interface like `ibmcloud iam api-key-create myapikey` or generate one in the Browser under "Manage -> Security -> Platform API Keys". Store the key away as it will not be visible after you closed the pop-up window.
 
-1.  Make sure you select your organization and the desired stage (e.g. "dev"). If there is no space or org selectable, try changing the region selector. **Be sure** to also clear out the _Application Name_ field and also remove the _${CF_APP}_ variable. This ensures that the name from the _manifest.yml_ is used:
+19. Make sure you select your organization and the desired stage (e.g. "dev"). If there is no space or org selectable, try changing the region selector. **Be sure** to also clear out the _Application Name_ field and also remove the _${CF_APP}_ variable. This ensures that the name from the _manifest.yml_ is used:
 
     ![](org-space.png)
 
-1.  Once saved, the stage will run whenever a new commit has arrived at the GitHub repository. As a one-off, you can trigger a deploy manually:
+20. Once saved, the stage will run whenever a new commit has arrived at the GitHub repository. As a one-off, you can trigger a deploy manually:
 
     ![](stage-trigger.png)
 
-1.  After the deploy finished successfully, you can find the URL of the deployed app in the logs of the stage. It should be the same as the one you specified in `manifest.yml`:
+21. After the deploy finished successfully, you can find the URL of the deployed app in the logs of the stage. It should be the same as the one you specified in `manifest.yml`:
 
     ![](logs.png)
 
