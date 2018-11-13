@@ -34,6 +34,9 @@ One member of the team will act as the author and change the content of the appl
 
    In order to enable your partner to work on apps in your organization, you need to [invite her](https://console.bluemix.net/docs/iam/iamuserinv.html#iamuserinv) to collaborate. Please perform the steps in ["Inviting Users"](https://console.bluemix.net/docs/iam/iamuserinv.html#inviting-users) and also those under ["Cloud Foundry access"](https://console.bluemix.net/docs/iam/iamuserinv.html#cloud-foundry-access). You should give your partner `Developer` rights in the `dev` space in the `Germany (Frankfurt)` region.
 
+1.  Once invited, the invited person needs to switch the account in the account switcher to be able to see the other persons apps:
+    ![](switch-account.png)
+
 1.  Create a new CI/CD service instance
 
     Go to the [IBM Cloud main menu](https://console.bluemix.net/) and click on **DevOps**, then add a new **Continuous Delivery** service. Make sure you select "Germany" as region.
@@ -45,7 +48,6 @@ One member of the team will act as the author and change the content of the appl
     ![](create.png)
 
 1.  Select "Build your own toolchain":
-
     ![](byo.png)
 
 1.  Provide a name for the new toolchain:
