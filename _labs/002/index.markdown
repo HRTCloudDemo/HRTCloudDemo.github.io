@@ -89,7 +89,7 @@ One member of the team will act as the author and change the content of the appl
 
 1.  Add a stage to it:
 
-    ![](add-stage.pngs)
+    ![](add-stage.png)
 
 1.  Select the previously configured GitHub source as input of this step:
 
