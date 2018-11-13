@@ -29,6 +29,7 @@ Alternatively, you can work directly from your workstation. Make sure you have t
 
 * An editor suitable for coding, e.g. Atom, Visual Studio Code or Sublime Text
 * [`cf`](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
+* [`ibmcloud`](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html)
 * [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [`node`](https://nodejs.org/en/) (should come with npm)
 

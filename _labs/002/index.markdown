@@ -103,6 +103,8 @@ One member of the team will act as the author and change the content of the appl
 
     ![](stage-deploy.png)
 
+1. You will need a 'Platform API Key' in the next step. To generate one, you can either use the command line interface like `ibmcloud iam api-key-create myapikey` or generate one in the Browser under "Manage -> Security -> Platform API Keys". Store the key away as it will not be visible after you closed the pop-up window.
+
 1.  Make sure you select your organization and the desired stage (e.g. "dev"). If there is no space or org selectable, try changing the region selector. **Be sure** to also clear out the _Application Name_ field and also remove the _${CF_APP}_ variable. This ensures that the name from the _manifest.yml_ is used:
 
     ![](org-space.png)
