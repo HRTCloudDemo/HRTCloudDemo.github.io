@@ -21,12 +21,12 @@ One member of the team will act as the author and change the content of the appl
       buildpack: staticfile_buildpack
     </pre>
 
-1. Run `ibmcloud cf push` and verify your app is picking up the right name. IBM Cloud is adding your host to the `eu-de.mybluemix.net` domain by default, so that the complete URL becomes <code><a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a></code>.
+2. Run `cf push` and verify your app is picking up the right name. IBM Cloud is adding your host to the `eu-de.mybluemix.net` domain by default, so that the complete URL becomes <code><a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a></code>.
 
    Once you can access the app under this URL, commit and push your changes to the local git repo.
-1. Create a GitHub Repository for the code
-1. Follow the instructions to push the repo
-1. [Add your team mate as a collaborator](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/) to the GitHub repo so that they can push, too
+3. Create a GitHub Repository for the code
+4. Follow the instructions to push the repo
+5. [Add your team mate as a collaborator](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/) to the GitHub repo so that they can push, too
 
 # Create a CI/CD pipeline
 
