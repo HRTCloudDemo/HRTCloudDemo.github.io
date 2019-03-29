@@ -28,15 +28,15 @@ The Watson Tone Analyzer service is able to detect moods and tones in a text sub
 
   ![Tone Analyzer](tone_tile.png)
 
-- On the next page select the Frankfurt region and your org and space and click **Create**
+- On the next page select the Frankfurt region and click **Create**
 
   You will get redirected to another page. At this point of time the service is ready to use
 
-- The credentials to access your service are displayed in the `Credentials` section on that page. Please press "show" to reveal username and password
+- The credentials to access your service are displayed in the `Service Credentials` section on that page. Please press "View Credentials" for the "Auto-generated service credentails" to reveal the api key and url
 
   ![Credentials](show_creds.png)
 
-- Note down url, username and password. They will be used in the next section of this tutorial
+- Note down apikey and url. They will be used in the next section of this tutorial
 
 ## Get the code of the sample app
 
@@ -64,13 +64,13 @@ The app provides a basic user interface and an API that you will use in an later
   On Windows you cannot do this in the Explorer.
   Instead, you have to use the `rename` command in a Command Window to change the name of the file.
 
-- Edit `.env` and fill in username, password and url of your instance of the Tone Analyzer service
+- Edit `.env` and fill in apikey and url of your instance of the Tone Analyzer service (you have noted them down in the last section of this tutorial).
 
 # Test the app locally
 
 - Install dependent packages via: `npm i`
 - Start the app via: `node app.js`
-- Open the app by visiting [localhost:3000](http://localhost:3000/) in your browser. If you are using the Vagrant image, the port will be forwarded to your workstation as [localhost:12345](http://localhost:12345/) instead.
+- Open the app by visiting [localhost:3000](http://localhost:3000/) in your browser.
 - Press the submit button on the loaded page. The word "happy" should be displayed in the "mood" field
 - You can play around by changing the content of both input fields.
 
