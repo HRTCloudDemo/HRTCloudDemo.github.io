@@ -32,6 +32,6 @@ The `mood` property will either be "`happy`" or "`unhappy`". You can use this va
 ## References
 * [Source code of the Tone Analyzer application](https://github.com/HRTCloudDemo/HRTToneDemo)
 * [Watson Tone Analyzer Home Page](https://www.ibm.com/watson/services/tone-analyzer/)
-* [Watson Tone Analyzer Documentation](https://console.bluemix.net/docs/services/tone-analyzer/index.html#about)
+* [Watson Tone Analyzer Documentation](https://cloud.ibm.com/docs/services/tone-analyzer?topic=tone-analyzer-produktinformation#about)
 * [Request package to call REST APIs from Node.js](https://github.com/request/request)
 * [Fetch API to call REST APIs from a web page](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
