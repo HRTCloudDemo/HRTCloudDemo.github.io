@@ -7,6 +7,13 @@ title: Welcome
 
 to the [IBM Cloud](https://www.ibm.com/cloud/) workshop at Hochschule Reutlingen.
 
+## IBM Cloud Introduction Videos
+
+[![IBM Cloud](https://img.youtube.com/vi/VXqbRNwXC2A/0.jpg)](https://www.youtube.com/watch?v=VXqbRNwXC2A)
+[![IBM Cloud Programming](https://img.youtube.com/vi/Bsy6mhRc7ZA/0.jpg)](https://www.youtube.com/watch?v=Bsy6mhRc7ZA)
+
+[Learn more](https://www.ibm.com/cloud/learn)
+
 ## Prerequisites
 
 Please complete the following steps _before_ coming to the lab:

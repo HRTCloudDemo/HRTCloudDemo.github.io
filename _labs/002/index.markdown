@@ -21,7 +21,7 @@ One member of the team will act as the author and change the content of the appl
       buildpack: staticfile_buildpack
     </pre>
 
-2. Run `cf push` and verify your app is picking up the right name. IBM Cloud is adding your host to the `eu-de.mybluemix.net` domain by default, so that the complete URL becomes <code><a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a></code>.
+2. Run `ibmcloud cf push` and verify your app is picking up the right name. IBM Cloud is adding your host to the `eu-de.mybluemix.net` domain by default, so that the complete URL becomes <code><a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a></code>.
 
    Once you can access the app under this URL, commit and push your changes to the local git repo.
 3. Create a GitHub Repository for the code
@@ -32,14 +32,14 @@ One member of the team will act as the author and change the content of the appl
 
 1. Invite you parter into your IBM Cloud organization
 
-   In order to enable your partner to work on apps in your organization, you need to [invite her](https://console.bluemix.net/docs/iam/iamuserinv.html#iamuserinv) to collaborate. Please perform the steps in ["Inviting Users"](https://console.bluemix.net/docs/iam/iamuserinv.html#inviting-users) and also those under ["Cloud Foundry access"](https://console.bluemix.net/docs/iam/iamuserinv.html#cloud-foundry-access). You should give your partner `Developer` rights in the `dev` space in the `Germany (Frankfurt)` region.
+   In order to enable your partner to work on apps in your organization, you need to [invite her](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv) to collaborate. Please perform the steps in ["Inviting Users"](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#inviting-users) and also those under ["Cloud Foundry access"](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#invite_cf). You should give your partner `Developer` rights in the `dev` space in the `Germany (Frankfurt)` region.
 
 1.  Once invited, the invited person needs to switch the account in the account switcher to be able to see the other persons apps:
     ![](switch-account.png)
 
 1.  Create a new CI/CD service instance
 
-    Go to the [IBM Cloud main menu](https://console.bluemix.net/) and click on **DevOps**, then add a new **Toolchains** service. Make sure you select "Germany" as region.
+    Go to the [IBM Cloud main menu](https://cloud.ibm.com/) and click on **DevOps**, then add a new **Toolchains** service. Make sure you select "Germany" as region.
 
     You may get an error message if you happen to have an existing CD/CD service because the lite plan is limited to a single instance of this service per user. In that case, just select the existing service and proceed to the next step. Alternatively, you can delete the existing service and create a new one.
 

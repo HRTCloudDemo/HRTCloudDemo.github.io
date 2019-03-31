@@ -24,7 +24,9 @@ title: Run a Static Webpage on IBM Cloud
 
 ## Deploy
 
-1.  [Log on to the IBM Cloud](https://console.bluemix.net) and select your Cloud Foundry organization:
+1.  [Log on to the IBM Cloud](https://cloud.ibm.com) and select your Cloud Foundry organization:
+
+    ![Account](account.png)
 
     ![CF Organizations](cf-orgs.png)
 
@@ -34,10 +36,14 @@ title: Run a Static Webpage on IBM Cloud
 
     This step will ensure that your space is available in the region `eu-de`.
 
-1.  In your local terminal, log on to the IBM Cloud using `cf`:
+1.  In your local terminal, log on to the IBM Cloud using `ibmcloud`:
 
     <pre>
-    cf login -a https://api.eu-gb.bluemix.net
+    ibmcloud login -a https://cloud.ibm.com -r eu-de
+    </pre>
+    and
+    <pre>
+    ibmcloud target --cf
     </pre>
 
     Provide your username and password and select the organization and space. If no space exists yet, create one using `cf create-space dev -o $ORG_NAME`, where `$ORG_NAME` is the name of the org you choose on first login. This is typically your email address.
@@ -71,5 +77,6 @@ title: Run a Static Webpage on IBM Cloud
 
 ## References
 
+* [Getting Started with the IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud-cli)
 * [Getting Started with the `cf` CLI](https://docs.cloudfoundry.org/cf-cli/getting-started.html)
 * [Staticfile Buildpack](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html)
