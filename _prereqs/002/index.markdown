@@ -28,8 +28,7 @@ All files from your workstation that are in the same directory as the `Vagrantfi
 Alternatively, you can work directly from your workstation. Make sure you have the following tools available:
 
 * An editor suitable for coding, e.g. Atom, Visual Studio Code or Sublime Text
-* [`cf`](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
-* [`ibmcloud`](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html)
+* [`ibmcloud`](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli#install_use)
 * [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [`node`](https://nodejs.org/en/) (should come with npm)
 

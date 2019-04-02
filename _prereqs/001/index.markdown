@@ -10,7 +10,7 @@ Before you can start, you will need to create an _IBM Cloud_ account and a promo
 * Open [ibm.onthehub.com](https://ibm.onthehub.com/) in a browser
 * Put the "_IBM Cloud_ Promo Code - 6 Month Trial" into the shopping cart.
 * Confirm the account by clicking the link in the eMail you received.
-* Register for the _IBM Cloud_-Promo-Code with your personal *registration code* that you received. You don't need the option "Request Additional Eligibility".
+* Register for the _IBM Cloud_-Promo-Code with your personal *registration code* that you received. You don't need the option "Requebst Additional Eligibility".
 * Go back to the shopping cart and then to the checkout.
 * Check the terms and conditions and choose "Accept", if you agree.
 * Complete the details form. For the course name, you can use `Hochschule Reutlingen Cloud Demo`.
@@ -20,7 +20,7 @@ With the promo code, you can now create a new _IBM Cloud_ account and extend the
 
 ## Create IBM Cloud Account
 
-* Create a new account on [bluemix.net](https://bluemix.net).
+* Create a new account on [cloud.ibm.com](https://cloud.ibm.com).
 * Confirm the account by clicking the link in the eMail you received.
 * Provide a name for the new organization that is being created for you, e.g. your eMail address.
 * As a region, choose Germany.
@@ -33,8 +33,7 @@ With the promo code, you can now create a new _IBM Cloud_ account and extend the
 
 * Enter your promo code under Account => Billing & Usage => Billing:
 
-    ![Billing](billing.png)
-
+   <img src="billing.png" alt="Billing" width="800"/><br/>
     You will get a message saying that your account will be converted to a trial account. The quota will be raised to 2 GB, too.
 
     ![Enter promo code](enter-promo-code.png)
