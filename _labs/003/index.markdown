@@ -80,38 +80,33 @@ Disclaimer: The scoring algorithm that condenses the complex response of the Ton
 
 # Push the working app to IBM Cloud
 
-In the root directory of the app create a file named `manifest.yml` with the following content:
+- In the root directory of the app create a file named `manifest.yml` with the following content:
 
-<pre>
----
-applications:
-- name: <span class="app_name"><span class="app_name">random-app-name</span></span>
-  memory: 128M
-</pre>
+    <pre>
+    ---
+    applications:
+    - name: <span class="app_name"><span class="app_name">random-app-name</span></span>
+    memory: 128M
+    </pre>
 
-- Set the API endpoint to your region
 
-  ```bash
-  ibmcloud api api.eu-de.bluemix.net
-  ```
+- In your local terminal, log on to the IBM Cloud using `ibmcloud`:
 
-- Login into the IBM Cloud using your credentials
+    <pre>
+    ibmcloud login -a https://cloud.ibm.com -r eu-de
+    </pre>
+    and
+    <pre>
+    ibmcloud target --cf
+    </pre>
 
-  ```bash
-  ibmcloud login
-  ```
-
-- Target your organization and space
-
-  ```bash
-  ibmcloud cf target -o <YOUR ORG> -s <YOUR SPACE>
-  ```
+    Provide your username and password and select the organization and space. If no space exists yet, create one using `cf create-space dev -o $ORG_NAME`, where `$ORG_NAME` is the name of the org you choose on first login. This is typically your email address.
 
 - Deploy your app to the cloud
 
-  ```bash
+  <pre>
   ibmcloud cf push
-  ```
+  </pre>
 
 - Access the app in your browser as <a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a>
 
