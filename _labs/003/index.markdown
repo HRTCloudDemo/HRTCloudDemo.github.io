@@ -92,25 +92,25 @@ applications:
 - Set the API endpoint to your region
 
   ```bash
-  cf api api.eu-de.bluemix.net
+  ibmcloud api api.eu-de.bluemix.net
   ```
 
 - Login into the IBM Cloud using your credentials
 
   ```bash
-  cf login
+  ibmcloud login
   ```
 
 - Target your organization and space
 
   ```bash
-  cf target -o <YOUR ORG> -s <YOUR SPACE>
+  ibmcloud cf target -o <YOUR ORG> -s <YOUR SPACE>
   ```
 
 - Deploy your app to the cloud
 
   ```bash
-  cf push
+  ibmcloud cf push
   ```
 
 - Access the app in your browser as <a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a>
@@ -121,5 +121,5 @@ applications:
 
 * [Source code of the demo application](https://github.com/HRTCloudDemo/HRTToneDemo)
 * [Watson Tone Analyzer](https://www.ibm.com/watson/services/tone-analyzer/)
-* [Watson Tone Analyzer Documentation](https://console.bluemix.net/docs/services/tone-analyzer/index.html#about)
+* [Watson Tone Analyzer Documentation](https://cloud.ibm.com/docs/services/tone-analyzer/index.html#about)
 * [More complete sample app on GitHub](https://github.com/watson-developer-cloud/tone-analyzer-nodejs)
