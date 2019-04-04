@@ -51,7 +51,7 @@ title: Run a Static Webpage on IBM Cloud
 1.  Push the app:
 
     <pre>
-    cf push <span class="app_name">random-app-name</span> -b staticfile_buildpack -m 256M
+    ibmcloud cf push <span class="app_name">random-app-name</span> -b staticfile_buildpack -m 256M
     </pre>
 
     - The `-b` switch tells Cloud Foundry (CF) to use the static file buildpack for this application. Usually CF detects the type of application you want to deploy automatically. However, so far, our "application" is so simple that we need to tell CF that it should treat it as a set of static files.

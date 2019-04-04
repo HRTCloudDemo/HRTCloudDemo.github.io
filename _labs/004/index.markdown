@@ -36,7 +36,7 @@ let port = process.env.PORT || 3000;
 
 ## Deploy
 
-Run `cf push` to push this to IBM Cloud. Only proceed to the next step if your app is working correctly.
+Run `ibmcloud cf push` to push this to IBM Cloud. Only proceed to the next step if your app is working correctly.
 
 ## Create a CI/CD pipeline
 
