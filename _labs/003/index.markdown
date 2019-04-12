@@ -82,12 +82,12 @@ Disclaimer: The scoring algorithm that condenses the complex response of the Ton
 
 - In the root directory of the app create a file named `manifest.yml` with the following content:
 
-    <pre>
-    ---
-    applications:
-    - name: <span class="app_name"><span class="app_name">random-app-name</span></span>
-    memory: 128M
-    </pre>
+<pre>
+---
+applications:
+- name: <span class="app_name"><span class="app_name">random-app-name</span></span>
+  memory: 128M
+</pre>
 
 
 - In your local terminal, log on to the IBM Cloud using `ibmcloud`:
