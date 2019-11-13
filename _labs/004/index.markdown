@@ -48,4 +48,4 @@ Go to <a href="#" class="app_name">https://<span class="app_name">random-app-nam
 
 ## References
 
-* [Create a Toolchain](https://cloud.ibm.com/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started&locale=de#toolchains_getting_started)
+* [Create a Toolchain](https://cloud.ibm.com/docs/services/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started&locale=en#toolchains_getting_started)
