@@ -35,6 +35,7 @@ One member of the team will act as the author and change the content of the appl
    In order to enable your partner to work on apps in your organization, you need to [invite her](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv) to collaborate. Please perform the steps in ["Inviting Users"](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#inviting-users) and also those under ["Cloud Foundry access"](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#invite_cf). You should give your partner `Developer` rights in the `dev` space in the `Germany (Frankfurt)` region.
 
 1.  Once invited, the invited person needs to switch the account in the account switcher to be able to see the other persons apps:
+
     ![](switch-account.png)
 
 1.  Create a new CI/CD service instance
@@ -48,6 +49,7 @@ One member of the team will act as the author and change the content of the appl
     ![](create.png)
 
 3.  Select "Build your own toolchain":
+
     ![](byo.png)
 
 4.  Provide a name for the new toolchain:
@@ -67,6 +69,7 @@ One member of the team will act as the author and change the content of the appl
     ![](github-auth.png)
 
 8.  On the GitHub page, click **Authorize IBM Cloud**
+
     ![](github-auth2.png)
 
 9.  Select "Existing repository" and provide the URL to your app's source code:
@@ -75,7 +78,7 @@ One member of the team will act as the author and change the content of the appl
 
 10. Now we need another tool to publish the source code:
 
-    ![](add-tool.png)g
+    ![](add-pipeline.png)
 
 11. Select "Delivery pipeline":
 
