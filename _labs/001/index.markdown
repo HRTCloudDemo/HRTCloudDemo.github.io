@@ -77,6 +77,6 @@ title: Run a Static Webpage on IBM Cloud
 
 ## References
 
-* [Getting Started with the IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud-cli)
+* [Getting Started with the IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started)
 * [Getting Started with the `cf` CLI](https://docs.cloudfoundry.org/cf-cli/getting-started.html)
 * [Staticfile Buildpack](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html)
