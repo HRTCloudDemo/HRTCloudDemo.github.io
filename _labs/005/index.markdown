@@ -97,27 +97,50 @@ The sample app provides skeletons for all needed Cloud Functions components that
 
   ![Test the Sequence](cloud-functions_sequence-test.png)
 
-## Detect language
+## Implement Language Detection
 
-Following tasks should help you as a structure to help you finish this task:
-- Initialize the LanguageTranslatorV3 service using proper Action input parameters (see Service credentials of the Language Translator Service)
-- Check whether the input parameters contain a text (that can be identified)
-- Call the language identification API of the translation service (see: https://cloud.ibm.com/apidocs/language-translator?code=node#identify-language)
-  - if successful, resolve exactly like shown below with the language that is most probable the best one in the "language" property and the confidence it got detected in the "confidence" property
-  - in case of errors during the call resolve with an error message according to the pattern found in the catch clause below
+Your task is to implement language detection to the action code in "src/detect-language.js"
 
-## Translate text
 
-Following tasks should help you as a structure to help you finish this task:
-- Initialize the LanguageTranslatorV3 service using proper Action input parameters (see Service credentials of the Language Translator Service)
-- Check whether the input parameters contain a text (that can be identified), a source and target language
-- Call the language translation API of the translation service (see: https://cloud.ibm.com/apidocs/language-translator?code=node#translate)
-  - if successful, resolve exactly like shown below with the translated text in the "translation" property, the number of translated words in "words" and the number of characters in "characters".
-  - in case of errors during the call resolve with an error message according to the pattern found in the catch clause below
+Following items should help you as a structure to help you finish this task:
+- Use the sample code provided in the API documentation of the [Language Identification API](https://cloud.ibm.com/apidocs/language-translator?code=node#identify-language)
+- Initialize the LanguageTranslatorV3 service using proper input parameters (see Service credentials of the Language Translator Service)
+- Check whether the input parameters contain a text that can be identified
+- Call the language identification API of the translation service
+  - if successful, resolve (exactly as shown in "src/detect-language.js"), 
+    with the language that is most probable the best one in the "language" property 
+    and the confidence it got detected in the "confidence" property
+  - in case of errors during the call resolve with an error message according to the pattern found in the catch clause in "src/detect-language.js"
+- use the "ibmcloud fn action" command above to install the action after you have changed the code
 
-## Chat application integration
+## Implement Text Translation
 
-- TBD
+Your task is to implement language translation to the action code in "src/translate.js"
+
+Following items should help you as a structure to help you finish this task:
+- Use the sample code provided in the API documentation of the [Translation API](https://cloud.ibm.com/apidocs/language-translator?code=node#translate)
+- Initialize the LanguageTranslatorV3 service using proper input parameters (see Service credentials of the Language Translator Service)
+- Check whether the input parameters contain a text that can be translated, a source and target language
+- Call the language translation API of the translation service 
+  - if successful, resolve (exactly as shown in "src/translate.js") with the translated text in the "translation" property, 
+    the number of translated words in "words" 
+    and the number of characters in "characters".
+  - in case of errors during the call resolve with an error message according to the pattern found in the catch clause in "src/detect-language.js"
+- use the "ibmcloud fn action" command above to install the action after you have changed the code
+
+## Integrate Text translation into your chat application
+
+Your last task is to integrate translation into your chat app. Your app should be enhanced so that any message 
+that is received in a language other than English is translated into and displayed in English.
+If this is not possible due to a failing translation (e.g. since the source language was not detected)
+the original message should be displayed.
+
+The URL to call from your chat app to do the translation,
+is the one you used above when testing the function sequence in your browser.
+You can retrieve the URL via:
+```bash
+ibmcloud fn action get hrt-demo/identify-and-translate --url
+```
 
 ## References
 
@@ -125,3 +148,5 @@ Following tasks should help you as a structure to help you finish this task:
 * [Cloud Functions - Creating serverless REST APIs](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-apigateway)
 * [Cloud Functions API Docs](https://cloud.ibm.com/apidocs/functions)
 * [Language Translator API Docs](https://cloud.ibm.com/apidocs/language-translator)
+* [Fetching a URL from your Browser](https://javascript.info/fetch)
+* [Fetching a URL from your NodeJs code](https://github.com/request/request)
