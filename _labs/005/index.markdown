@@ -3,7 +3,7 @@ layout: lab
 title: Enhance your Chat application by adding translation capabilities
 ---
 
-In this lab you will use IBM Cloud Functions, a serverless offering, to generate ad-hoc translations for the messages that are sent to the chat application. You should work in a team of two developers (e.g. with your neighbor) and collaborate on improving the application. One member of the team should focus on developing the Actions the perform the language detection and the translation. The other member focus on enhancing the existing chat application and integrate the REST endpoint for providing the translations. 
+In this lab you will use IBM Cloud Functions, a serverless offering, to generate ad-hoc translations for the messages that are sent to the chat application. You should work in a team of two developers (e.g. with your neighbor) and collaborate on improving the application. One member of the team should focus on developing the Actions the perform the language detection and the translation. The other member focus on enhancing the existing chat application and integrate the REST endpoint for providing the translations.
 
 # Setup & Preparations
 
@@ -69,30 +69,38 @@ The sample app provides skeletons for all needed Cloud Functions components that
   git clone <url from the last step>
   ```
 
+  and change into the created folder
+
 - Allow your team member to commit to the forked repository, by adding him as contributor to the project
+
+- Open the `config/ai-params.json` file and replace the `apikey` and `url` using the one that you retrieved from the Language Translator service credentials
 
 - Deploy the set of Actions and the Sequence configuration by executing following commands
 
   ```bash
-  ibmcloud fn ...
+  ibmcloud fn package create hrt-demo
 
-  ibmcloud fn ...
+  ibmcloud fn action update hrt-demo/detect-language --docker ibmarc/cloud-functions-ai-translator:v1 src/detect-language.js --param-file config/ai-params.json --web true
 
-  ibmcloud fn ...
+  ibmcloud fn action update hrt-demo/translate --docker ibmarc/cloud-functions-ai-translator:latest src/translate.js -P config/ai-params.json --web true
+
+  ibmcloud fn action create hrt-demo/identify-and-translate --sequence hrt-demo/detect-language,hrt-demo/translate --web true
   ```
 
 - Retrieve the URL of the created Sequence
 
-```bash
-ibmcloud fn ...
-```
+  ```bash
+  ibmcloud fn action get hrt-demo/identify-and-translate --url
+  ```
 
-- Test the Sequence by opening following URL
+- Test the Sequence by opening the URL in the browser
+
+  ![Test the Sequence](cloud-functions_sequence-test.png)
 
 ## Detect language
 
 Following tasks should help you as a structure to help you finish this task:
-- Initialize the LanguageTranslatorV3 service using proper Action input parameters
+- Initialize the LanguageTranslatorV3 service using proper Action input parameters (see Service credentials of the Language Translator Service)
 - Check whether the input parameters contain a text (that can be identified)
 - Call the language identification API of the translation service (see: https://cloud.ibm.com/apidocs/language-translator?code=node#identify-language)
   - if successful, resolve exactly like shown below with the language that is most probable the best one in the "language" property and the confidence it got detected in the "confidence" property
@@ -101,7 +109,7 @@ Following tasks should help you as a structure to help you finish this task:
 ## Translate text
 
 Following tasks should help you as a structure to help you finish this task:
-- Initialize the LanguageTranslatorV3 service using proper Action input parameters
+- Initialize the LanguageTranslatorV3 service using proper Action input parameters (see Service credentials of the Language Translator Service)
 - Check whether the input parameters contain a text (that can be identified), a source and target language
 - Call the language translation API of the translation service (see: https://cloud.ibm.com/apidocs/language-translator?code=node#translate)
   - if successful, resolve exactly like shown below with the translated text in the "translation" property, the number of translated words in "words" and the number of characters in "characters".
