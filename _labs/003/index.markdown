@@ -32,7 +32,7 @@ The Watson Tone Analyzer service is able to detect moods and tones in a text sub
 
   You will get redirected to another page. At this point of time the service is ready to use
 
-- The credentials to access your service are displayed in the `Service Credentials` section on that page. Please press "View Credentials" for the "Auto-generated service credentails" to reveal the api key and url
+- The credentials to access your service are displayed in the `Service Credentials` section on that page. Please press "View Credentials" for the "Auto-generated service credentials" to reveal the api key and url
 
   ![Credentials](show_creds.png)
 
