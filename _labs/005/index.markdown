@@ -3,7 +3,7 @@ layout: lab
 title: Enhance your Chat application by adding translation capabilities
 ---
 
-In this lab you will use IBM Cloud Functions, a serverless offering, to generate ad-hoc translations for the messages that are sent to the chat application. You should work in a team of two developers (e.g. with your neighbor) and collaborate on improving the application. One member of the team should focus on developing the Actions the perform the language detection and the translation. The other member focus on enhancing the existing chat application and integrate the REST endpoint for providing the translations.
+In this lab you will use IBM Cloud Functions, a serverless offering, to generate ad-hoc translations for the messages that are sent to the chat application. You should work in a team of two developers (e.g. with your neighbor) and collaborate on improving the application. One member of the team should focus on developing the Actions that perform the language detection and the translation. The other member should focus on enhancing the existing chat application and integrate the REST endpoint for providing the translations.
 
 # Setup & Preparations
 
