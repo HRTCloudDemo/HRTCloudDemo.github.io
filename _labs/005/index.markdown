@@ -101,6 +101,8 @@ The sample app provides skeletons for all needed Cloud Functions components that
 
 Your task is to implement language detection to the action code in "src/detect-language.js"
 
+(look for the "*******TODO**********" comment to find the place to add your code)
+
 
 Following items should help you as a structure to help you finish this task:
 - Use the sample code provided in the API documentation of the [Language Identification API](https://cloud.ibm.com/apidocs/language-translator?code=node#identify-language)
@@ -116,6 +118,8 @@ Following items should help you as a structure to help you finish this task:
 ## Implement Text Translation
 
 Your task is to implement language translation to the action code in "src/translate.js"
+
+(look for the "*******TODO**********" comment to find the place to add your code)
 
 Following items should help you as a structure to help you finish this task:
 - Use the sample code provided in the API documentation of the [Translation API](https://cloud.ibm.com/apidocs/language-translator?code=node#translate)
