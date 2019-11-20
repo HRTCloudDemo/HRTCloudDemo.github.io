@@ -17,13 +17,33 @@ In this lab you will use IBM Cloud Functions, a serverless offering, to generate
 
   ![Cloud Functions Namespace Create](cloud-functions-ui_namespace-create.png)
 
-- Allow you parter to work in the Cloud Functions Namespace
+- If not done already, [invite your partner](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#inviting-users) to your Cloud account
 
-   In order to enable your partner to work in the same Cloud Functions Namespace, you should ...
+- Allow your parter to work in the Cloud Functions Namespace
+
+  - Navigate to `Manage > Access (IAM) > Users` and click on the users name
+
+    ![Manage User Access](cloud-users.png)
+
+  - Navigate to the `Access policies` tab and click `Assign access`
+
+    ![Access policies](cloud-users_assign-access.png)
+
+  - Click the `resource group` title
+
+    ![Assign access within resource group](cloud-users_assign-access_rg.png)
+
+  - Select your resource group, the `Functions service`, the region `Frankfurt` and grant `Writer` access on Service level
+
+    ![Grant access](cloud-users_assign-access_rg-functions.png)
 
 - Once invited, the invited person needs to switch the account in the account switcher to be able to see the other persons apps
 
-- Setup the CLI plugin for Cloud Functions (see: https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-cli_install#cli_plugin_setup)
+- Setup the [CLI plugin for Cloud Functions](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-cli_install#cli_plugin_setup)
+
+  ```bash
+  ibmcloud plugin install cloud-functions
+  ```
 
 ## Subscribe to the IBM Language Translator Service
 
@@ -109,8 +129,8 @@ Following items should help you as a structure to help you finish this task:
 - Initialize the LanguageTranslatorV3 service using proper input parameters (see Service credentials of the Language Translator Service)
 - Check whether the input parameters contain a text that can be identified
 - Call the language identification API of the translation service
-  - if successful, resolve (exactly as shown in "src/detect-language.js"), 
-    with the language that is most probable the best one in the "language" property 
+  - if successful, resolve (exactly as shown in "src/detect-language.js"),
+    with the language that is most probable the best one in the "language" property
     and the confidence it got detected in the "confidence" property
   - in case of errors during the call resolve with an error message according to the pattern found in the catch clause in "src/detect-language.js"
 - use the "ibmcloud fn action" command above to install the action after you have changed the code
@@ -125,16 +145,16 @@ Following items should help you as a structure to help you finish this task:
 - Use the sample code provided in the API documentation of the [Translation API](https://cloud.ibm.com/apidocs/language-translator?code=node#translate)
 - Initialize the LanguageTranslatorV3 service using proper input parameters (see Service credentials of the Language Translator Service)
 - Check whether the input parameters contain a text that can be translated, a source and target language
-- Call the language translation API of the translation service 
-  - if successful, resolve (exactly as shown in "src/translate.js") with the translated text in the "translation" property, 
-    the number of translated words in "words" 
+- Call the language translation API of the translation service
+  - if successful, resolve (exactly as shown in "src/translate.js") with the translated text in the "translation" property,
+    the number of translated words in "words"
     and the number of characters in "characters".
   - in case of errors during the call resolve with an error message according to the pattern found in the catch clause in "src/detect-language.js"
 - use the "ibmcloud fn action" command above to install the action after you have changed the code
 
 ## Integrate Text translation into your chat application
 
-Your last task is to integrate translation into your chat app. Your app should be enhanced so that any message 
+Your last task is to integrate translation into your chat app. Your app should be enhanced so that any message
 that is received in a language other than English is translated into and displayed in English.
 If this is not possible due to a failing translation (e.g. since the source language was not detected)
 the original message should be displayed.
@@ -150,6 +170,7 @@ ibmcloud fn action get hrt-demo/identify-and-translate --url
 
 * [Cloud Functions - Getting Started](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-getting-started)
 * [Cloud Functions - Creating serverless REST APIs](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-apigateway)
+* [Cloud Functions - Monitoring Dashboard](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-monitor#monitor_dash_use)
 * [Cloud Functions API Docs](https://cloud.ibm.com/apidocs/functions)
 * [Language Translator API Docs](https://cloud.ibm.com/apidocs/language-translator)
 * [Fetching a URL from your Browser](https://javascript.info/fetch)
