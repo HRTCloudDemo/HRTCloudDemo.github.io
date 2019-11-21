@@ -95,6 +95,20 @@ The sample app provides skeletons for all needed Cloud Functions components that
 
 - Open the `config/ai-params.json` file and replace the `apikey` and `url` using the one that you retrieved from the Language Translator service credentials
 
+- Use the Cloud Functions CLI to set the correct Namespace context
+
+  - Retrieve the list of all Namespaces within this region
+
+    ```bash
+    ibmcloud fn namespace list
+    ```
+
+  - Utilize the `id` of the Namespace you would like to use and set this as your current namespaces
+
+    ```bash
+    ibmcloud fn property set --namespace <id>
+    ```  
+
 - Deploy the set of Actions and the Sequence configuration by executing following commands
 
   ```bash
