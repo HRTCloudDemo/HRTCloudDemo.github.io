@@ -131,6 +131,22 @@ The sample app provides skeletons for all needed Cloud Functions components that
 
   ![Test the Sequence](cloud-functions_sequence-test.png)
 
+- In order to analyze the Action code that was just executed you can either use the [Monitoring Dashboard](https://cloud.ibm.com/functions/dashboard) or the CLI
+
+  - Get a list of all Actions/Sequences that were executed (aka `activations`). The list of activations is sorted in a descending order (newest on top)
+
+    ```bash
+    ibmcloud fn activation list
+    ```
+
+  - Retrieve the detailed output of a single activation
+
+    ```bash
+    ibmcloud fn activation get <activation-id>
+    ```
+
+  - **Note:** the activation record also contains `console.log` outputs. You should use logging in order to analyze and debug your Action code
+
 ## Implement Language Detection
 
 Your task is to implement language detection to the action code in "src/detect-language.js"
