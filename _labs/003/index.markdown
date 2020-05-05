@@ -1,20 +1,51 @@
 ---
 layout: lab
-title: Consume a Cloud Service
+title: Use FaaS and Cloud Services to implement a Translation pipeline
 ---
 
-The purpose of this exercise is to enable you to configure and use existing cloud services to add value to your application without much work.
+In this lab you will use IBM Cloud Functions, a serverless offering, to generate ad-hoc translations for the messages that are sent to the chat application. You should work in a team of two developers (e.g. with your neighbor) and collaborate on improving the application. One member of the team should focus on developing the Actions that perform the language detection and the translation. The other member should focus on enhancing the existing chat application and integrate the REST endpoint for providing the translations.
 
-## Introduction
+# Setup & Preparations
 
-The IBM Cloud platform (like other cloud platforms) provides a huge set of services
-that can be used as ready to use building blocks to enhance your application. These services typically only have to be instantiated and configured to be used.
+## Cloud Functions
 
-Such a service might be a database engines like Cloudant, and IOT platform, a mobile services that send push notification, or a service that provides artificial intelligence capabilities like the Watson Tone Analyzer used in this exercise.
+- Enter the [Cloud Functions User-Interface](https://cloud.ibm.com/functions)
 
-The Watson Tone Analyzer service is able to detect moods and tones in a text submitted to it. In this exercise you will create a new instance of the Watson Tone Analyzer Service and connect it to an existing app that is [provided to you in a GitHub Repository](https://github.com/HRTCloudDemo/HRTToneDemo).
+  ![Cloud Functions](cloud-functions-ui.png)
 
-## Subscribe to the IBM Tone Analyzer Service
+- Create a Cloud Functions namespace in the Frankfurt region
+
+  ![Cloud Functions Namespace Create](cloud-functions-ui_namespace-create.png)
+
+- If not done already, [invite your partner](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#inviting-users) to your Cloud account
+
+- Allow your parter to work in the Cloud Functions Namespace
+
+  - Navigate to `Manage > Access (IAM) > Users` and click on the users name
+
+    ![Manage User Access](cloud-users.png)
+
+  - Navigate to the `Access policies` tab and click `Assign access`
+
+    ![Access policies](cloud-users_assign-access.png)
+
+  - Click the `resource group` title
+
+    ![Assign access within resource group](cloud-users_assign-access_rg.png)
+
+  - Select your resource group, the `Functions service`, the region `Frankfurt` and grant `Writer` access on Service level
+
+    ![Grant access](cloud-users_assign-access_rg-functions.png)
+
+- Once invited, the invited person needs to switch the account in the account switcher to be able to see the other persons apps
+
+- Setup the [CLI plugin for Cloud Functions](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-cli_install#cli_plugin_setup)
+
+  ```bash
+  ibmcloud plugin install cloud-functions
+  ```
+
+## Subscribe to the IBM Language Translator Service
 
 - Go to the _IBM Cloud_ main menu and click on **Catalog**,
 
@@ -24,26 +55,27 @@ The Watson Tone Analyzer service is able to detect moods and tones in a text sub
 
   ![Watson](watson.png)
 
-- Click on **Tone Analyzer**
+- Click on **Language Translator**
 
-  ![Tone Analyzer](tone_tile.png)
+  ![Language Translator](language-translator-tile.png)
 
 - On the next page select the Frankfurt region and click **Create**
 
   You will get redirected to another page. At this point of time the service is ready to use
 
-- The credentials to access your service are displayed in the `Service Credentials` section on that page. Please press "View Credentials" for the "Auto-generated service credentials" to reveal the api key and url
+- The credentials to access your service are displayed in the `Service Credentials` section on that page. Press "View Credentials" for the "Auto-generated service credentials" in order to reveal the api key and url
 
   ![Credentials](show_creds.png)
 
-- Note down apikey and url. They will be used in the next section of this tutorial
+- Note down apikey and url, because you will need them in the further course of this lab.
+
+# Developing
 
 ## Get the code of the sample app
 
-The sample app uses the Watson Tone Analyzer service to score lines of text as happy or unhappy.
-The app provides a basic user interface and an API that you will use in an later exercise.
+The sample app provides skeletons for all needed Cloud Functions components that you can you as a foundation. It provides a basic interface and deployment commands that can be used to update your code fragments.
 
-- Fork the git repository [linked here](https://github.com/HRTCloudDemo/HRTToneDemo) into your own GitHub account by pressing the **Fork** button in that GitHub Repository
+- Fork the git repository [linked here](https://github.com/HRTCloudDemo/HRTTranslationDemo) into your own GitHub account by pressing the **Fork** button in that GitHub Repository
 
   ![Fork the repo](fork.png)
 
@@ -59,62 +91,117 @@ The app provides a basic user interface and an API that you will use in an later
 
   and change into the created folder
 
-- Rename `.env.sample` to `.env`
+- Allow your team member to commit to the forked repository, by adding him as contributor to the project
 
-  On Windows you cannot do this in the Explorer.
-  Instead, you have to use the `rename` command in a Command Window to change the name of the file.
+- Open the `config/ai-params.json` file and replace the `apikey` and `url` using the one that you retrieved from the Language Translator service credentials
 
-- Edit `.env` and fill in apikey and url of your instance of the Tone Analyzer service (you have noted them down in the last section of this tutorial).
+- Use the Cloud Functions CLI to set the correct Namespace context
 
-# Test the app locally
+  - Retrieve the list of all Namespaces within this region
 
-- Install dependent packages via: `npm i`
-- Start the app via: `node app.js`
-- Open the app by visiting [localhost:3000](http://localhost:3000/) in your browser.
-- Press the submit button on the loaded page. The word "happy" should be displayed in the "mood" field
-- You can play around by changing the content of both input fields.
+    ```bash
+    ibmcloud fn namespace list
+    ```
 
-Disclaimer: The scoring algorithm that condenses the complex response of the Tone Analyzer service to one single word is quite simple and might return surprising results. Feel free to improve.
+  - Utilize the `id` of the Namespace you would like to use and set this as your current namespaces
 
-![Tone app](toneapp.png)
+    ```bash
+    ibmcloud fn property set --namespace <id>
+    ```  
 
-# Push the working app to IBM Cloud
+- Deploy the set of Actions and the Sequence configuration by executing following commands
 
-- In the root directory of the app create a file named `manifest.yml` with the following content:
+  ```bash
+  ibmcloud fn package create hrt-demo
 
-<pre>
----
-applications:
-- name: <span class="app_name"><span class="app_name">random-app-name</span></span>
-  memory: 128M
-</pre>
+  ibmcloud fn action update hrt-demo/detect-language --docker ibmarc/cloud-functions-ai-translator:v1 src/detect-language.js --param-file config/ai-params.json --web true
+
+  ibmcloud fn action update hrt-demo/translate --docker ibmarc/cloud-functions-ai-translator:latest src/translate.js -P config/ai-params.json --web true
+
+  ibmcloud fn action create hrt-demo/identify-and-translate --sequence hrt-demo/detect-language,hrt-demo/translate --web true
+  ```
+
+- Retrieve the URL of the created Sequence
+
+  ```bash
+  ibmcloud fn action get hrt-demo/identify-and-translate --url
+  ```
+
+- Test the Sequence by opening the URL in the browser
+
+  ![Test the Sequence](cloud-functions_sequence-test.png)
+
+- In order to analyze the Action code that was just executed you can either use the [Monitoring Dashboard](https://cloud.ibm.com/functions/dashboard) or the CLI
+
+  - Get a list of all Actions/Sequences that were executed (aka `activations`). The list of activations is sorted in a descending order (newest on top)
+
+    ```bash
+    ibmcloud fn activation list
+    ```
+
+  - Retrieve the detailed output of a single activation
+
+    ```bash
+    ibmcloud fn activation get <activation-id>
+    ```
+
+  - **Note:** the activation record also contains `console.log` outputs. You should use logging in order to analyze and debug your Action code
+
+## Implement Language Detection
+
+Your task is to implement language detection to the action code in "src/detect-language.js"
+
+(look for the "*******TODO**********" comment to find the place to add your code)
 
 
-- In your local terminal, log on to the IBM Cloud using `ibmcloud`:
+Following items should help you as a structure to help you finish this task:
+- Use the sample code provided in the API documentation of the [Language Identification API](https://cloud.ibm.com/apidocs/language-translator?code=node#identify-language)
+- Initialize the LanguageTranslatorV3 service using proper input parameters (see Service credentials of the Language Translator Service)
+- Check whether the input parameters contain a text that can be identified
+- Call the language identification API of the translation service
+  - if successful, resolve (exactly as shown in "src/detect-language.js"),
+    with the language that is most probable the best one in the "language" property
+    and the confidence it got detected in the "confidence" property
+  - in case of errors during the call resolve with an error message according to the pattern found in the catch clause in "src/detect-language.js"
+- use the "ibmcloud fn action" command above to install the action after you have changed the code
 
-    <pre>
-    ibmcloud login -a https://cloud.ibm.com -r eu-de
-    </pre>
-    and
-    <pre>
-    ibmcloud target --cf
-    </pre>
+## Implement Text Translation
 
-    Provide your username and password and select the organization and space. If no space exists yet, create one using `cf create-space dev -o $ORG_NAME`, where `$ORG_NAME` is the name of the org you choose on first login. This is typically your email address.
+Your task is to implement language translation to the action code in "src/translate.js"
 
-- Deploy your app to the cloud
+(look for the "*******TODO**********" comment to find the place to add your code)
 
-  <pre>
-  ibmcloud cf push
-  </pre>
+Following items should help you as a structure to help you finish this task:
+- Use the sample code provided in the API documentation of the [Translation API](https://cloud.ibm.com/apidocs/language-translator?code=node#translate)
+- Initialize the LanguageTranslatorV3 service using proper input parameters (see Service credentials of the Language Translator Service)
+- Check whether the input parameters contain a text that can be translated, a source and target language
+- Call the language translation API of the translation service
+  - if successful, resolve (exactly as shown in "src/translate.js") with the translated text in the "translation" property,
+    the number of translated words in "words"
+    and the number of characters in "characters".
+  - in case of errors during the call resolve with an error message according to the pattern found in the catch clause in "src/detect-language.js"
+- use the "ibmcloud fn action" command above to install the action after you have changed the code
 
-- Access the app in your browser as <a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a>
+## Integrate Text translation into your chat application
 
-- Submitting with all defaults should again return "happy" in the mood field
+Your last task is to integrate translation into your chat app. Your app should be enhanced so that any message
+that is received in a language other than English is translated into and displayed in English.
+If this is not possible due to a failing translation (e.g. since the source language was not detected)
+the original message should be displayed.
+
+The URL to call from your chat app to do the translation,
+is the one you used above when testing the function sequence in your browser.
+You can retrieve the URL via:
+```bash
+ibmcloud fn action get hrt-demo/identify-and-translate --url
+```
 
 ## References
 
-* [Source code of the demo application](https://github.com/HRTCloudDemo/HRTToneDemo)
-* [Watson Tone Analyzer](https://www.ibm.com/watson/services/tone-analyzer/)
-* [Watson Tone Analyzer Documentation](https://cloud.ibm.com/docs/services/tone-analyzer/index.html#about)
-* [More complete sample app on GitHub](https://github.com/watson-developer-cloud/tone-analyzer-nodejs)
+* [Cloud Functions - Getting Started](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-getting-started)
+* [Cloud Functions - Creating serverless REST APIs](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-apigateway)
+* [Cloud Functions - Monitoring Dashboard](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-monitor#monitor_dash_use)
+* [Cloud Functions API Docs](https://cloud.ibm.com/apidocs/functions)
+* [Language Translator API Docs](https://cloud.ibm.com/apidocs/language-translator)
+* [Fetching a URL from your Browser](https://javascript.info/fetch)
+* [Fetching a URL from your NodeJs code](https://github.com/request/request)

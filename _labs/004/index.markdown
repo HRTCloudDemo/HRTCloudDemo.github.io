@@ -1,6 +1,6 @@
 ---
 layout: lab
-title: Port the Chat App to IBM Cloud
+title: Port your Chat App to IBM Cloud
 ---
 
 ## Get the code
@@ -21,18 +21,22 @@ applications:
 
 This is a fairly simple manifest that should work for you as well. If you need want to check for more options please see the  [Cloud Foundry documentation on deployment using manifests](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html).
 
-## Hint: Configure the correct port
+## Important! Configure the correct Port
 
 IBM Cloud assigns an internal port number to your app automatically.
 
 This port number is not visible to the outside world but only used by the routers
-that connect external users to your application.
+that connect external users to your application and available in the enironmant variable `PORT`
 
-In your app you can find out correct port at startup like this:
+Change the port assignment in your app like this:
 
 <pre>
 let port = process.env.PORT || 3000;
 </pre>
+
+With this change the port number will be read from the enironmant variable `PORT`.
+If your app is running on your computer where the enironmant variable `PORT` is not set 
+port 3000 will be used.
 
 ## Deploy
 
