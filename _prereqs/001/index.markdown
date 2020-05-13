@@ -1,18 +1,15 @@
 ---
 layout: prereq
-title: Create IBM Cloud-Account
+title: Install Software
 ---
 
-Before you can start, you will need to create an _IBM Cloud_ account.
+## Simple
 
-## Create IBM Cloud Account
+You can work directly from your workstation. Make sure you have the following tools available:
 
-* Create a new account on [cloud.ibm.com](https://cloud.ibm.com).
+* An editor suitable for coding, e.g. Atom, Visual Studio Code or Sublime Text
+* [`ibmcloud`](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli#install_use)
+* [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [`node`](https://nodejs.org/en/) (should come with npm)
 
-* Confirm the account by clicking the link in the eMail you received.
-
-* Provide your first and last name for and chose Germany as region
-
-  ![Create Organization](create-account.png)
-
-If you run into any issues, ask one of the facilitators or open a support ticket under Support => Add Ticket.
+On a Mac we recommend using [Homebrew](https://brew.sh/) to install these tools.
