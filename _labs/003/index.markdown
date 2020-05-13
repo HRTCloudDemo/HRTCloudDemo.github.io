@@ -29,13 +29,13 @@ In this lab you will use IBM Cloud Functions, a serverless offering, to generate
 
     ![Access policies](cloud-users_assign-access.png)
 
-  - Click the `resource group` title
+  - Click the `IAM services` title
 
-    ![Assign access within resource group](cloud-users_assign-access_rg.png)
+    ![Assign access within IAM](cloud-users_assign-access_iam.png)
 
   - Select your resource group, the `Functions service`, the region `Frankfurt` and grant `Writer` access on Service level
 
-    ![Grant access](cloud-users_assign-access_rg-functions.png)
+    ![Grant access](cloud-users_assign-access_iam-functions.png)
 
 - Once invited, the invited person needs to switch the account in the account switcher to be able to see the other persons apps
 
@@ -51,17 +51,19 @@ In this lab you will use IBM Cloud Functions, a serverless offering, to generate
 
   ![catalog](catalog.png)
 
-- Select **AI** in the menu on the left side
+- Type **Language Translator** in the search form and press `Return`
 
-  ![Watson](watson.png)
+  ![catalog-search](catalog_search.png)
 
-- Click on **Language Translator**
+- Click on the **Language Translator** tile
 
   ![Language Translator](language-translator-tile.png)
 
 - On the next page select the Frankfurt region and click **Create**
 
   You will get redirected to another page. At this point of time the service is ready to use
+
+  ![Create Language Translator](create-translator-service.png)
 
 - The credentials to access your service are displayed in the `Service Credentials` section on that page. Press "View Credentials" for the "Auto-generated service credentials" in order to reveal the api key and url
 
