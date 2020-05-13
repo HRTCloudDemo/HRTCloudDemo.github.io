@@ -99,6 +99,18 @@ The sample app provides skeletons for all needed Cloud Functions components that
 
 - Use the Cloud Functions CLI to set the correct Namespace context
 
+  - Set a resource group
+
+    ```bash
+    ibmcloud target -g Default
+    ```
+
+  - Target the `Frankfurt` Region
+
+    ```bash
+    ibmcloud target -r eu-de
+    ```
+
   - Retrieve the list of all Namespaces within this region
 
     ```bash
