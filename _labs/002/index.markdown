@@ -10,7 +10,9 @@ In this lab you will create a team of two developers (e.g. with your neighbor) a
 One member of the team will act as the author and change the content of the application (`index.html`). The other member will act as designer and change the visual presentation of the content.
 
 1. Create and embed a minimal CSS file into `index.html`
+
 1. Test locally (load `index.html` in a browser)
+
 1. Add a new file called `manifest.yml` with the following content:
 
     <pre>
@@ -21,18 +23,19 @@ One member of the team will act as the author and change the content of the appl
       buildpack: staticfile_buildpack
     </pre>
 
-2. Run `ibmcloud cf push` and verify your app is picking up the right name. IBM Cloud is adding your host to the `eu-de.mybluemix.net` domain by default, so that the complete URL becomes <code><a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-de.mybluemix.net</a></code>.
+2. Run `ibmcloud cf push` and verify your app is picking up the right name. IBM Cloud is adding your host to the `eu-gb.mybluemix.net` domain by default, so that the complete URL becomes <code><a href="#" class="app_name">https://<span class="app_name">random-app-name</span>.eu-gb.mybluemix.net</a></code>. Once you can access the app under this URL, commit and push your changes to the local git repo.
 
-   Once you can access the app under this URL, commit and push your changes to the local git repo.
 3. Create a GitHub Repository for the code
+
 4. Follow the instructions to push the repo
+
 5. [Add your team mate as a collaborator](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/) to the GitHub repo so that they can push, too
 
 # Create a CI/CD pipeline
 
-1. Invite you parter into your IBM Cloud organization
+1. Invite you partner into your IBM Cloud organization
 
-   In order to enable your partner to work on apps in your organization, you need to [invite her](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv) to collaborate. Please perform the steps in ["Inviting Users"](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#inviting-users) and also those under ["Cloud Foundry access"](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#invite_cf). You should give your partner `Developer` rights in the `dev` space in the `Germany (Frankfurt)` region.
+   In order to enable your partner to work on apps in your organization, you need to [invite her](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv) to collaborate. Please perform the steps in ["Inviting Users"](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#inviting-users). You should give your partner `Developer` rights in the `dev` space in the `United Kingdom (London)` region.
 
 1.  Once invited, the invited person needs to switch the account in the account switcher to be able to see the other persons apps:
 
@@ -40,7 +43,7 @@ One member of the team will act as the author and change the content of the appl
 
 1.  Create a new CI/CD service instance
 
-    Go to the [IBM Cloud main menu](https://cloud.ibm.com/) and click on **DevOps**, then add a new **Toolchains** service. Make sure you select "Germany" as region.
+    Go to the [IBM Cloud products catalog](https://cloud.ibm.com/catalog) and search for **DevOps**, then click on the **Toolchains** tile.
 
     You may get an error message if you happen to have an existing CD/CD service because the lite plan is limited to a single instance of this service per user. In that case, just select the existing service and proceed to the next step. Alternatively, you can delete the existing service and create a new one.
 

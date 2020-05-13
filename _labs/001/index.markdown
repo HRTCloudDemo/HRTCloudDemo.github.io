@@ -30,16 +30,16 @@ title: Run a Static Webpage on IBM Cloud
 
     ![CF Organizations](cf-orgs.png)
 
-1.  Create a `cf` space in the IBM Cloud UI and select the region **Germany**:
+1.  Create a `cf` space in the IBM Cloud UI and select the region **United Kingdom**:
 
-    ![Select a space](cf-create-space-de.png)
+    ![Select a space](cf-create-space-gb.png)
 
-    This step will ensure that your space is available in the region `eu-de`.
+    This step will ensure that your space is available in the region `eu-gb`.
 
 1.  In your local terminal, log on to the IBM Cloud using `ibmcloud`:
 
     <pre>
-    ibmcloud login -a https://cloud.ibm.com -r eu-de
+    ibmcloud login -a https://cloud.ibm.com -r eu-gb
     </pre>
     and
     <pre>
@@ -64,7 +64,7 @@ title: Run a Static Webpage on IBM Cloud
     requested state: started
     instances: 1/1
     usage: 256M x 1 instances
-    urls: <span class="app_name">random-app-name</span>.eu-de.mybluemix.net
+    urls: <span class="app_name">random-app-name</span>.eu-gb.mybluemix.net
     last uploaded: Wed Nov 8 18:26:38 UTC 2017
     stack: cflinuxfs2
     buildpack: staticfile_buildpack
