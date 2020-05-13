@@ -37,61 +37,71 @@ One member of the team will act as the author and change the content of the appl
 
    In order to enable your partner to work on apps in your organization, you need to [invite her](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv) to collaborate. Please perform the steps in ["Inviting Users"](https://cloud.ibm.com/docs/iam?topic=iam-iamuserinv#inviting-users). You should give your partner `Developer` rights in the `dev` space in the `United Kingdom (London)` region.
 
-1.  Once invited, the invited person needs to switch the account in the account switcher to be able to see the other persons apps:
+2.  Once invited, the invited person needs to switch the account in the account switcher to be able to see the other persons apps:
 
     ![](switch-account.png)
 
-1.  Create a new CI/CD service instance
+3.  Create a new CI/CD service instance
 
-    Go to the [IBM Cloud products catalog](https://cloud.ibm.com/catalog) and search for **DevOps**, then click on the **Toolchains** tile.
+    Go to the [IBM Cloud products catalog](https://cloud.ibm.com/catalog) and search for **Toolchain**, click on the **Toolchain** tile.
 
     You may get an error message if you happen to have an existing CD/CD service because the lite plan is limited to a single instance of this service per user. In that case, just select the existing service and proceed to the next step. Alternatively, you can delete the existing service and create a new one.
 
-2.  Create a new toolchain:
+    ![](catalog-toolchain.png)
+
+4.  Create a new toolchain:
 
     ![](create.png)
 
-3.  Select "Build your own toolchain":
+5.  Select "Build your own toolchain":
 
     ![](byo.png)
 
-4.  Provide a name for the new toolchain:
+6.  Provide a name for the new toolchain:
 
     ![](byo-config.png)
 
-5.  Now we need to add a tool to fetch the source code of the app. Add a new tool to this toolchain:
+7.  Now we need to add a tool to fetch the source code of the app. Add a new tool to this toolchain:
 
     ![](add-tool.png)
 
-6.  Select the GitHub tool:
+8.  Select the GitHub tool:
 
     ![](github.png)
 
-7.  You need to authorize **IBM Cloud** to talk to your github repository:
+9.  You need to authorize **IBM Cloud** to talk to your github repository:
 
     ![](github-auth.png)
 
-8.  On the GitHub page, click **Authorize IBM Cloud**
+10.  On the GitHub page, click **Authorize IBM Cloud**
 
     ![](github-auth2.png)
 
-9.  Select "Existing repository" and provide the URL to your app's source code:
+11.  Select "Existing repository" and provide the URL to your app's source code:
 
     ![](git-configure.png)
 
-10. Now we need another tool to publish the source code:
+12. Now we need another tool to publish the source code:
 
     ![](add-pipeline.png)
 
-11. Select "Delivery pipeline":
+13. Select "Delivery pipeline":
 
     ![](delivery-pipeline.png)
 
-12. Provide a name for the new pipeline:
+14. Provide a name for the new pipeline:
 
     ![](delivery-pipeline-name.png)
 
-13. Configure the delivery pipeline by clicking it:
+15. Add a Continuous Delivery service as mentioned in the warning notification
+
+    ![](add-cicd-service.png)
+
+16. Make sure you selected the region **London** and the **Lite** plan, then click **Create**
+
+    ![](create-cicd-service.png)
+
+13. Go back to the toolchain and configure the delivery pipeline by clicking it:
 
     ![](configure-pipeline.png)
 
