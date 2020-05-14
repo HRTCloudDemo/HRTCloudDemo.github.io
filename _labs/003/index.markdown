@@ -196,16 +196,9 @@ Following items should help you as a structure to help you finish this task:
   - in case of errors during the call resolve with an error message according to the pattern found in the catch clause in "src/detect-language.js"
 - use the "ibmcloud fn action" command above to install the action after you have changed the code
 
-## Integrate Text translation into your chat application
-
-Your last task is to integrate translation into your chat app. Your app should be enhanced so that any message
-that is received in a language other than English is translated into and displayed in English.
-If this is not possible due to a failing translation (e.g. since the source language was not detected)
-the original message should be displayed.
-
-The URL to call from your chat app to do the translation,
-is the one you used above when testing the function sequence in your browser.
-You can retrieve the URL via:
+## Test your pipeline with various languages
+Test your translation pipeline with some examples from different languages.
+It is vailable under the URL you get with this command:
 ```bash
 ibmcloud fn action get hrt-demo/identify-and-translate --url
 ```
