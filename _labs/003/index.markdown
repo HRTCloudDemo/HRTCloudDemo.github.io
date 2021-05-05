@@ -117,10 +117,10 @@ The sample app provides skeletons for all needed Cloud Functions components that
     ibmcloud fn namespace list
     ```
 
-  - Utilize the `id` of the Namespace you would like to use and set this as your current namespaces
+  - Utilize the `name` of the Namespace you would like to use and set this as your current namespaces
 
     ```bash
-    ibmcloud fn property set --namespace <id>
+    ibmcloud fn namespace target <name>
     ```  
 
 - Deploy the set of Actions and the Sequence configuration by executing following commands
@@ -128,9 +128,9 @@ The sample app provides skeletons for all needed Cloud Functions components that
   ```bash
   ibmcloud fn package create hrt-demo
 
-  ibmcloud fn action update hrt-demo/detect-language --docker ibmarc/cloud-functions-ai-translator:v1 src/detect-language.js --param-file config/ai-params.json --web true
+  ibmcloud fn action update hrt-demo/detect-language --kind nodejs:default src/detect-language.js --param-file config/ai-params.json --web true
 
-  ibmcloud fn action update hrt-demo/translate --docker ibmarc/cloud-functions-ai-translator:latest src/translate.js -P config/ai-params.json --web true
+  ibmcloud fn action update hrt-demo/translate --kind nodejs:default src/translate.js -P config/ai-params.json --web true
 
   ibmcloud fn action create hrt-demo/identify-and-translate --sequence hrt-demo/detect-language,hrt-demo/translate --web true
   ```
@@ -177,7 +177,7 @@ Following items should help you as a structure to help you finish this task:
     with the language that is most probable the best one in the "language" property
     and the confidence it got detected in the "confidence" property
   - in case of errors during the call resolve with an error message according to the pattern found in the catch clause in "src/detect-language.js"
-- use the "ibmcloud fn action" command above to install the action after you have changed the code
+- use the "ibmcloud fn action" command above or the [Cloud Functions Web-UI](https://cloud.ibm.com/functions) to install the action after you have changed the code
 
 ## Implement Text Translation
 
@@ -194,7 +194,7 @@ Following items should help you as a structure to help you finish this task:
     the number of translated words in "words"
     and the number of characters in "characters".
   - in case of errors during the call resolve with an error message according to the pattern found in the catch clause in "src/detect-language.js"
-- use the "ibmcloud fn action" command above to install the action after you have changed the code
+- use the "ibmcloud fn action" command above or the [Cloud Functions Web-UI](https://cloud.ibm.com/functions) to update the action after you have changed the code
 
 ## Test your pipeline with various languages
 Test your translation pipeline with some examples from different languages.
@@ -208,6 +208,7 @@ ibmcloud fn action get hrt-demo/identify-and-translate --url
 * [Cloud Functions - Getting Started](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-getting-started)
 * [Cloud Functions - Creating serverless REST APIs](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-apigateway)
 * [Cloud Functions - Monitoring Dashboard](https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-monitor#monitor_dash_use)
+* [Cloud Functions Web-UI](https://cloud.ibm.com/functions)
 * [Cloud Functions API Docs](https://cloud.ibm.com/apidocs/functions)
 * [Language Translator API Docs](https://cloud.ibm.com/apidocs/language-translator)
 * [Fetching a URL from your Browser](https://javascript.info/fetch)
